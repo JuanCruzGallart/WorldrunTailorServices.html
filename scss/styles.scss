@@ -1,0 +1,89 @@
+//Font import
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;700&display=swap');
+
+$primary_font: Montserrat, sans-seriff;
+
+//Color variables
+
+
+//Main styles
+body{
+    font-family: $primary_font;
+
+    nav{
+        .navbar-brand{
+            display: none;
+        }
+    }
+
+    .container{
+        margin: 25px 0px;
+        text-align: center;
+
+        #row_h1_img{
+            margin: 85px 0 20px 0;
+        }
+
+        .row{
+            .col{
+                h1{
+                    font-weight: 700;
+                }
+            }
+        }
+
+        #col_globe_img{
+            display: flex;
+            justify-content: center;    
+
+            #globe_img{
+                width: 400px;
+                padding: 0;
+            }
+        }
+
+        #info_portada{
+            p{
+                font-size: 1.2rem;
+
+                small{
+                    font-size: 0.75em;
+                }
+            }
+        }
+
+    }//End of container
+
+    @media only screen and (min-width: 768px){
+
+        nav{
+            .navbar-brand{
+                display:contents;
+            }
+        }
+
+        .container{
+            text-align: left;
+
+            #row_h1_img{
+                margin: 170px 0 20px 0;
+            }
+
+            #info_portada{
+                position: relative;
+                top: -370px;
+            }
+
+            #col_globe_img{
+                justify-content: end;
+
+                #globe_img{
+                    width: 500px;
+                    position: relative;
+                    top: -62px;
+                }
+            }
+            
+        }
+    }
+}//End of body

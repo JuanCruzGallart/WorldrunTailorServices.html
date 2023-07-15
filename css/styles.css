@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;700&display=swap");
+body {
+  font-family: Montserrat, sans-seriff;
+}
+body nav .navbar-brand {
+  display: none;
+}
+body .container {
+  margin: 25px 0px;
+  text-align: center;
+}
+body .container #row_h1_img {
+  margin: 85px 0 20px 0;
+}
+body .container .row .col h1 {
+  font-weight: 700;
+}
+body .container #col_globe_img {
+  display: flex;
+  justify-content: center;
+}
+body .container #col_globe_img #globe_img {
+  width: 400px;
+  padding: 0;
+}
+body .container #info_portada p {
+  font-size: 1.2rem;
+}
+body .container #info_portada p small {
+  font-size: 0.75em;
+}
+@media only screen and (min-width: 768px) {
+  body nav .navbar-brand {
+    display: contents;
+  }
+  body .container {
+    text-align: left;
+  }
+  body .container #row_h1_img {
+    margin: 170px 0 20px 0;
+  }
+  body .container #info_portada {
+    position: relative;
+    top: -370px;
+  }
+  body .container #col_globe_img {
+    justify-content: end;
+  }
+  body .container #col_globe_img #globe_img {
+    width: 500px;
+    position: relative;
+    top: -62px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
