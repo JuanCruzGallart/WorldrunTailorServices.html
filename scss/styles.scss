@@ -1,18 +1,102 @@
 //Font import
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
 
 $primary_font: Montserrat, sans-seriff;
 
 //Color variables
+$color-primary: #6C9BCF;
+$color-danger: #FF0060;
+$color-success: #1B9C85;
+$color-warning: #F7D060;
+$color-white: #fff;
+$color-info-dark: #7d8da1;
+$color-dark: #363949;
+$color-light: rgba(132, 139, 200, 0.18);
+$color-dark-variant: #677483;
+$color-background: #f6f6f9;
 
+$card-border-radius: 2rem;
+$border-radius-1: 0.4rem;
+$border-radius-2: 1.2rem;
+
+$card-padding: 1.8rem;
+$padding-1: 1.2rem;
+
+$box-shadow: 0 2rem 3rem var($color-light);
+
+.dark-mode-variables{
+    $color-background: #181a1e;
+    $color-white: #202528;
+    $color-dark: #edeffd;
+    $color-dark-variant: #a3bdcc;
+    $color-light: rgba(0, 0, 0, 0.4);
+    $box-shadow: 0 2rem 3rem var($color-light);
+}
 
 //Main styles
 body{
     font-family: $primary_font;
+    background-color: $color-background;
 
     nav{
         .navbar-brand{
             display: none;
+        }
+
+        svg{
+            cursor: pointer;
+        }
+
+        #offcanvasNavbar{
+            width: 310px;
+            background-color: $color-background;
+        }
+
+        .offcanvas-body{
+            margin: 30px 0 0 20px;
+
+            .globe_svg{
+                position: relative;
+                top: +180px;
+            }
+
+            .dark-mode{
+                background-color: $color-light;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 33px;
+                width: 70px;
+                cursor: pointer;
+                border-radius: $border-radius-1;
+                position: relative;
+                top: +200px;
+                border: solid 1px black;
+
+                span{
+                    font-size: 1.6rem;
+                    width: 50%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                span.active{
+                    background-color: $color-primary;
+                    color: white;
+                    border-radius: $border-radius-1;
+                }
+            }
+        }
+
+        .nav-item{
+            a{
+                font-size: 30px;
+                font-weight: 400;
+            }
+
+            margin: 5px 0 5px 0;
         }
     }
 
@@ -52,6 +136,37 @@ body{
             }
         }
 
+        button{
+            border-radius: $border-radius-2;
+            height: 35px;
+            width: 130px;
+        }
+
+        .get-started-btn{
+            color: $color-white;
+            background-color: $color-dark;
+            transition: all 0.5s ease;
+            margin-right: 15px;
+        }
+        .get-started-btn:hover{
+            color:$color-dark;
+            background-color: $color-white;
+            border: solid 2px $color-dark;
+        }
+
+        .learn-more-btn{
+            color: $color-dark;
+            background-color: $color-white;
+            border: $color-dark solid 2px;
+            transition: all 0.5s ease;
+        }
+        .learn-more-btn:hover{
+            color: $color-white;
+            background-color: $color-dark;
+        }
+
+        
+
     }//End of container
 
     @media only screen and (min-width: 768px){
@@ -59,9 +174,27 @@ body{
         nav{
             .navbar-brand{
                 display:contents;
+                a{
+                    margin-left: 100px;
+                }
             }
-        }
 
+            .offcanvas-body{
+                margin: 0;
+                ul{
+                    margin-right: 150px;
+                }
+            }
+
+            .nav_things{
+                display: flex;
+                justify-content: space-between;
+                margin-right: 10px;
+                position: relative;
+                top: -180px;
+            }
+           
+        }
         .container{
             text-align: left;
 
