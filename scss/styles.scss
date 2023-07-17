@@ -37,15 +37,45 @@ $box-shadow: 0 2rem 3rem var($color-light);
 body{
     font-family: $primary_font;
     background-color: $color-background;
+    overflow-x: hidden;
+
+    footer{
+        border-top: solid black 1px;
+        padding-top: 25px;
+        margin: 0 0 25px 0;
+        // background: linear-gradient(to right, #8682A5, #9E91BA, #6B7CAA);
+        // background: linear-gradient(to right, #00093c, #2d0b00);
+        // color: white;
+
+        .row{
+            .col-xl{
+                display: flex;
+                justify-content: start;
+
+                span{
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
 
     nav{
+        .navbar-toggler{
+            backdrop-filter: blur(2px);
+            border-radius: $border-radius-1;
+            border: solid 1px rgba(255, 255, 255, 0.2);
+            padding: 3px;
+        }
+
         .navbar-brand{
             display: none;
+            font-size: 30px;
         }
 
         .nav_things{
             display: flex;
             justify-content: space-between;
+            margin-bottom: 10px;
             // flex-direction: column;
         }
 
@@ -104,14 +134,14 @@ body{
 
             margin: 5px 0 5px 0;
         }
-    }
+    }//end of nav styles
 
     .container{
         margin: 25px 0px;
         text-align: center;
 
         #row_h1_img{
-            margin: 85px 0 20px 0;
+            margin: 50px 0 20px 0;
         }
 
         .row{
@@ -144,8 +174,11 @@ body{
 
         button{
             border-radius: $border-radius-2;
-            height: 35px;
-            width: 130px;
+            height: 42px;
+            width: 148px;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
         .get-started-btn{
@@ -153,6 +186,7 @@ body{
             background-color: $color-dark;
             transition: all 0.5s ease;
             margin-right: 15px;
+            border: solid 2px $color-dark;
         }
         .get-started-btn:hover{
             color:$color-dark;
@@ -171,15 +205,57 @@ body{
             background-color: $color-dark;
         }
 
-        
+        #carouselExampleCaptions{
+            margin: 100px 0 50px 0;
 
+            .carousel-inner{
+                width: 100vw;
+            }
+
+            .carousel-control-prev{
+                top: +50%;
+                display: flex;
+                justify-content: start;
+            }
+            .carousel-control-next{
+                top: +50%;
+                display: flex;
+                justify-content: end;
+            }
+        }
+        
+        //Info Section styles
+        .info_sections{
+            margin: 50px 0;
+        }
+
+        .imgs_info_section{
+            display: flex;
+            justify-content: center;
+
+            img{
+                width: 105vw;
+            }
+        }
     }//End of container
 
 
     //Responsive
-    @media only screen and (min-width: 768px){
+    @media only screen and (max-width: 385px){
+        .container{
+            #col_globe_img{
+                #globe_img{
+                    width: 320px;
+                }
+            }
+        }
+    }
 
+    @media only screen and (min-width: 1200px){
         nav{
+            backdrop-filter: blur(5px);
+            border: solid black 1px;
+            
             .navbar-brand{
                 display:contents;
                 a{
@@ -193,7 +269,7 @@ body{
 
                 ul{
                     position: relative;
-                    left: +750px;
+                    right: -50px;
 
                     li{
                         margin-right: 15px;
@@ -203,7 +279,7 @@ body{
             }
 
             .nav_things{
-                margin-right: 10px;
+                margin: 0 10px 0 0;
                 position: relative;
                 top: +22px;
                 flex-direction: row;
@@ -215,8 +291,8 @@ body{
                     top: -5px;
                 }
             }
-           
-        }
+        }//end of nav styles
+
         .container{
             text-align: left;
 
@@ -237,8 +313,83 @@ body{
                     position: relative;
                     top: -62px;
                 }
+            }  
+            //styles for the carousel...  
+            #carouselExampleCaptions{
+                .carousel-control-prev, .carousel-control-next{
+                    top: +50%;
+                    display:block;
+                }
             }
-            
+        }
+    }
+
+    @media only screen and (min-width: 1300px){
+        nav{
+            .offcanvas-body{
+                ul{
+                    position: relative;
+                    right: -150px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1400px){
+        nav{
+            .offcanvas-body{
+                ul{
+                    position: relative;
+                    right: -245px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1500px){
+        nav{
+            .offcanvas-body{
+                ul{
+                    position: relative;
+                    right: -320px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1600px){
+        nav{
+            .offcanvas-body{
+                ul{
+                    position: relative;
+                    right: -440px;
+                }
+            }
+        }
+    }
+
+
+    @media only screen and (min-width: 1700px){
+        nav{
+            .offcanvas-body{
+                ul{
+                    position: relative;
+                    right: -510px;
+                }
+            }
+        }
+    }
+
+
+    @media only screen and (min-width: 1800px){
+
+        nav{
+            .offcanvas-body{
+                ul{
+                    position: relative;
+                    right: -635px;
+                }
+            }
         }
     }//end of responsive
 }//End of body

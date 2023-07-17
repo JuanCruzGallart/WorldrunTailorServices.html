@@ -2,13 +2,34 @@
 body {
   font-family: Montserrat, sans-seriff;
   background-color: #f6f6f9;
+  overflow-x: hidden;
+}
+body footer {
+  border-top: solid black 1px;
+  padding-top: 25px;
+  margin: 0 0 25px 0;
+}
+body footer .row .col-xl {
+  display: flex;
+  justify-content: start;
+}
+body footer .row .col-xl span {
+  margin-right: 5px;
+}
+body nav .navbar-toggler {
+  backdrop-filter: blur(2px);
+  border-radius: 0.4rem;
+  border: solid 1px rgba(255, 255, 255, 0.2);
+  padding: 3px;
 }
 body nav .navbar-brand {
   display: none;
+  font-size: 30px;
 }
 body nav .nav_things {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 body nav svg {
   cursor: pointer;
@@ -62,7 +83,7 @@ body .container {
   text-align: center;
 }
 body .container #row_h1_img {
-  margin: 85px 0 20px 0;
+  margin: 50px 0 20px 0;
 }
 body .container .row .col h1 {
   font-weight: 700;
@@ -83,14 +104,18 @@ body .container #info_portada p small {
 }
 body .container button {
   border-radius: 1.2rem;
-  height: 35px;
-  width: 130px;
+  height: 42px;
+  width: 148px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 body .container .get-started-btn {
   color: #fff;
   background-color: #363949;
   transition: all 0.5s ease;
   margin-right: 15px;
+  border: solid 2px #363949;
 }
 body .container .get-started-btn:hover {
   color: #363949;
@@ -107,7 +132,42 @@ body .container .learn-more-btn:hover {
   color: #fff;
   background-color: #363949;
 }
-@media only screen and (min-width: 768px) {
+body .container #carouselExampleCaptions {
+  margin: 100px 0 50px 0;
+}
+body .container #carouselExampleCaptions .carousel-inner {
+  width: 100vw;
+}
+body .container #carouselExampleCaptions .carousel-control-prev {
+  top: 50%;
+  display: flex;
+  justify-content: start;
+}
+body .container #carouselExampleCaptions .carousel-control-next {
+  top: 50%;
+  display: flex;
+  justify-content: end;
+}
+body .container .info_sections {
+  margin: 50px 0;
+}
+body .container .imgs_info_section {
+  display: flex;
+  justify-content: center;
+}
+body .container .imgs_info_section img {
+  width: 105vw;
+}
+@media only screen and (max-width: 385px) {
+  body .container #col_globe_img #globe_img {
+    width: 320px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body nav {
+    backdrop-filter: blur(5px);
+    border: solid black 1px;
+  }
   body nav .navbar-brand {
     display: contents;
   }
@@ -120,13 +180,13 @@ body .container .learn-more-btn:hover {
   }
   body nav .offcanvas-body ul {
     position: relative;
-    left: 750px;
+    right: -50px;
   }
   body nav .offcanvas-body ul li {
     margin-right: 15px;
   }
   body nav .nav_things {
-    margin-right: 10px;
+    margin: 0 10px 0 0;
     position: relative;
     top: 22px;
     flex-direction: row;
@@ -154,6 +214,46 @@ body .container .learn-more-btn:hover {
     width: 500px;
     position: relative;
     top: -62px;
+  }
+  body .container #carouselExampleCaptions .carousel-control-prev, body .container #carouselExampleCaptions .carousel-control-next {
+    top: 50%;
+    display: block;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  body nav .offcanvas-body ul {
+    position: relative;
+    right: -150px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  body nav .offcanvas-body ul {
+    position: relative;
+    right: -245px;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  body nav .offcanvas-body ul {
+    position: relative;
+    right: -320px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  body nav .offcanvas-body ul {
+    position: relative;
+    right: -440px;
+  }
+}
+@media only screen and (min-width: 1700px) {
+  body nav .offcanvas-body ul {
+    position: relative;
+    right: -510px;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  body nav .offcanvas-body ul {
+    position: relative;
+    right: -635px;
   }
 }
 
