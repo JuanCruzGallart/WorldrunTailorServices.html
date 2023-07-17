@@ -8,6 +8,7 @@ body footer {
   border-top: solid black 1px;
   padding-top: 25px;
   margin: 0 0 25px 0;
+  overflow: hidden;
 }
 body footer .row .col-xl {
   display: flex;
@@ -21,6 +22,9 @@ body nav .navbar-toggler {
   border-radius: 0.4rem;
   border: solid 1px rgba(255, 255, 255, 0.2);
   padding: 3px;
+}
+body nav .container-fluid, body nav .container {
+  overflow: hidden;
 }
 body nav .navbar-brand {
   display: none;
@@ -102,6 +106,10 @@ body .container #info_portada p {
 body .container #info_portada p small {
   font-size: 0.75em;
 }
+body .container #portada_btns {
+  display: flex;
+  justify-content: center;
+}
 body .container button {
   border-radius: 1.2rem;
   height: 42px;
@@ -156,7 +164,7 @@ body .container .imgs_info_section {
   justify-content: center;
 }
 body .container .imgs_info_section img {
-  width: 105vw;
+  width: 100vw;
 }
 @media only screen and (max-width: 385px) {
   body .container #col_globe_img #globe_img {
