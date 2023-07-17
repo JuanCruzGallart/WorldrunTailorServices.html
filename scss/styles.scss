@@ -43,6 +43,12 @@ body{
             display: none;
         }
 
+        .nav_things{
+            display: flex;
+            justify-content: space-between;
+            // flex-direction: column;
+        }
+
         svg{
             cursor: pointer;
         }
@@ -54,10 +60,12 @@ body{
 
         .offcanvas-body{
             margin: 30px 0 0 20px;
+            display: flex;
+            flex-direction: column;
 
             .globe_svg{
                 position: relative;
-                top: +180px;
+                top: -5px;
             }
 
             .dark-mode{
@@ -69,8 +77,6 @@ body{
                 width: 70px;
                 cursor: pointer;
                 border-radius: $border-radius-1;
-                position: relative;
-                top: +200px;
                 border: solid 1px black;
 
                 span{
@@ -169,6 +175,8 @@ body{
 
     }//End of container
 
+
+    //Responsive
     @media only screen and (min-width: 768px){
 
         nav{
@@ -181,17 +189,31 @@ body{
 
             .offcanvas-body{
                 margin: 0;
+                flex-direction: row;
+
                 ul{
-                    margin-right: 150px;
+                    position: relative;
+                    left: +750px;
+
+                    li{
+                        margin-right: 15px;
+                    }
                 }
+
             }
 
             .nav_things{
-                display: flex;
-                justify-content: space-between;
                 margin-right: 10px;
                 position: relative;
-                top: -180px;
+                top: +22px;
+                flex-direction: row;
+                justify-content: space-around;
+                width: 150px;
+
+                .globe_svg{
+                    position: relative;
+                    top: -5px;
+                }
             }
            
         }
@@ -218,5 +240,5 @@ body{
             }
             
         }
-    }
+    }//end of responsive
 }//End of body

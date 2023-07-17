@@ -6,6 +6,10 @@ body {
 body nav .navbar-brand {
   display: none;
 }
+body nav .nav_things {
+  display: flex;
+  justify-content: space-between;
+}
 body nav svg {
   cursor: pointer;
 }
@@ -15,10 +19,12 @@ body nav #offcanvasNavbar {
 }
 body nav .offcanvas-body {
   margin: 30px 0 0 20px;
+  display: flex;
+  flex-direction: column;
 }
 body nav .offcanvas-body .globe_svg {
   position: relative;
-  top: 180px;
+  top: -5px;
 }
 body nav .offcanvas-body .dark-mode {
   background-color: rgba(132, 139, 200, 0.18);
@@ -29,8 +35,6 @@ body nav .offcanvas-body .dark-mode {
   width: 70px;
   cursor: pointer;
   border-radius: 0.4rem;
-  position: relative;
-  top: 200px;
   border: solid 1px black;
 }
 body nav .offcanvas-body .dark-mode span {
@@ -112,16 +116,26 @@ body .container .learn-more-btn:hover {
   }
   body nav .offcanvas-body {
     margin: 0;
+    flex-direction: row;
   }
   body nav .offcanvas-body ul {
-    margin-right: 150px;
+    position: relative;
+    left: 750px;
+  }
+  body nav .offcanvas-body ul li {
+    margin-right: 15px;
   }
   body nav .nav_things {
-    display: flex;
-    justify-content: space-between;
     margin-right: 10px;
     position: relative;
-    top: -180px;
+    top: 22px;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 150px;
+  }
+  body nav .nav_things .globe_svg {
+    position: relative;
+    top: -5px;
   }
   body .container {
     text-align: left;
