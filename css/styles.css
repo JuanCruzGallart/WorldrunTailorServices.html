@@ -156,8 +156,22 @@ body .container #carouselExampleCaptions .carousel-control-next {
   display: flex;
   justify-content: end;
 }
+body .container #info_section2 {
+  display: flex;
+  flex-direction: column;
+}
+body .container .item {
+  order: 2;
+}
+body .container .item:nth-child(2) {
+  order: 1;
+  text-align: left;
+}
 body .container .info_sections {
-  margin: 50px 0;
+  margin: 70px 0;
+}
+body .container .info_sections #text_info_sections_1 {
+  text-align: end;
 }
 body .container .imgs_info_section {
   display: flex;
@@ -174,7 +188,7 @@ body .container .imgs_info_section img {
 @media only screen and (min-width: 1200px) {
   body nav {
     backdrop-filter: blur(5px);
-    border: solid black 1px;
+    border-bottom: solid black 1px;
   }
   body nav .navbar-brand {
     display: contents;
@@ -223,9 +237,37 @@ body .container .imgs_info_section img {
     position: relative;
     top: -62px;
   }
+  body .container #portada_btns {
+    position: relative;
+    top: -370px;
+  }
   body .container #carouselExampleCaptions .carousel-control-prev, body .container #carouselExampleCaptions .carousel-control-next {
     top: 50%;
     display: block;
+  }
+  body .container .info_sections .item {
+    order: 1;
+  }
+  body .container .info_sections .item:nth-child(2) {
+    order: 2;
+    text-align: left;
+  }
+  body .container .info_sections #text_info_sections {
+    text-align: left;
+  }
+  body .container .info_sections #text_info_sections_1 {
+    text-align: left;
+  }
+  body .container .info_sections #btn1 {
+    position: relative;
+    top: -200px;
+  }
+  body .container .info_sections #btn2 {
+    position: relative;
+    top: -220px;
+  }
+  body .container .info_sections .imgs_info_section img {
+    width: 750px;
   }
 }
 @media only screen and (min-width: 1300px) {

@@ -236,8 +236,26 @@ body{
         }
         
         //Info Section styles
+        #info_section2{
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .item{
+            order: 2;
+        }
+
+        .item:nth-child(2){
+            order: 1;
+            text-align: left;
+        }
+
         .info_sections{
-            margin: 50px 0;
+            margin: 70px 0;
+
+            #text_info_sections_1{
+                text-align: end;
+            }
         }
 
         .imgs_info_section{
@@ -265,7 +283,7 @@ body{
     @media only screen and (min-width: 1200px){
         nav{
             backdrop-filter: blur(5px);
-            border: solid black 1px;
+            border-bottom: solid black 1px;
             
             .navbar-brand{
                 display:contents;
@@ -325,6 +343,12 @@ body{
                     top: -62px;
                 }
             }  
+
+            #portada_btns{
+                position: relative;
+                top: -370px;
+            }
+            
             //styles for the carousel...  
             #carouselExampleCaptions{
                 .carousel-control-prev, .carousel-control-next{
@@ -332,6 +356,45 @@ body{
                     display:block;
                 }
             }
+
+            .info_sections{
+
+                .item{
+                    order: 1;
+                }
+        
+                .item:nth-child(2){
+                    order: 2;
+                    text-align: left;
+                }
+
+                #text_info_sections{
+                    text-align: left;
+                }
+
+                #text_info_sections_1{
+                    text-align: left;
+                }
+
+                #btn1{
+                    position: relative;
+                    top: -200px;
+                }
+
+                
+                #btn2{
+                    position: relative;
+                    top: -220px;
+                }
+
+                .imgs_info_section{
+                    img{
+                        width: 750px;
+                    }
+                }
+            }
+
+            
         }
     }
 
