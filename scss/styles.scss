@@ -266,6 +266,89 @@ body{
                 width: 100vw;
             }
         }
+
+        //Services page styles
+        .row_serv{
+            height: 550px;
+
+            .bkgr_imgs{
+                padding: 0;
+                background-color: black;
+                position: absolute;
+                top: 0;
+                z-index: 0;
+
+                img{
+                    opacity: 0.5;
+                    // width: 100vw;
+                    height: 550px;
+                }
+            }
+            .bkgr_text{
+                color: white; 
+                position: relative;
+                margin: 150px 20px 0 20px;
+                z-index: 1;
+
+                h1{
+                    font-size: 30px;
+                }
+
+                small{
+                    position: relative;
+                    top: +20px;
+                    font-size: 18px;
+                }
+            }
+
+            span{
+                position: relative;
+                top: +200px;
+                color: white;
+                font-size: 30px;
+                z-index: 1;
+            }
+        }//End of .row_serv
+
+        #services_section{
+            .row{
+                .col-md{
+                    margin: 30px 0;
+
+                    .flexb_span_text{
+                        display: flex;
+                        margin-left: 25px;
+                    }
+
+                    .text_col{
+                        text-align: start;
+                        padding: 0;
+                    }
+
+                    .span_col{
+                        display: flex;
+                        justify-content: center;
+                        padding: 0;
+        
+                        span{
+                            font-size: 30px;
+                        }
+        
+                    }
+
+                    ul{
+                        margin: 10px 0 0 80px;
+                        li{
+                            text-align: start;
+                        }
+                    }
+                }
+            }
+            #btn_services{
+                margin: 60px 0;
+            }
+        }
+        //End of Services styles
     }//End of container
 
 
