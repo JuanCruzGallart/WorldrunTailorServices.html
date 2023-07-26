@@ -4,6 +4,9 @@ body {
   background-color: #f6f6f9;
   overflow-x: hidden;
 }
+body strong {
+  color: rgb(56, 56, 56);
+}
 body footer {
   border-top: solid black 1px;
   padding-top: 25px;
@@ -85,7 +88,6 @@ body nav .nav-item a {
 body .container {
   margin: 25px 0px;
   text-align: center;
-  overflow: hidden;
 }
 body .container #row_h1_img {
   margin: 50px 0 20px 0;
@@ -106,6 +108,7 @@ body .container #info_portada p {
 }
 body .container #info_portada p small {
   font-size: 0.75em;
+  line-height: normal;
 }
 body .container #portada_btns {
   display: flex;
@@ -147,13 +150,21 @@ body .container #carouselExampleCaptions {
 body .container #carouselExampleCaptions .carousel-inner {
   width: 100vw;
 }
+body .container #carouselExampleCaptions .carousel-inner .bkgr_carousel {
+  background-color: black;
+}
+body .container #carouselExampleCaptions .carousel-inner .bkgr_carousel img {
+  opacity: 0.6;
+}
 body .container #carouselExampleCaptions .carousel-control-prev {
-  top: 50%;
+  position: absolute;
+  top: 45%;
   display: flex;
   justify-content: start;
 }
 body .container #carouselExampleCaptions .carousel-control-next {
-  top: 50%;
+  position: absolute;
+  top: 45%;
   display: flex;
   justify-content: end;
 }
@@ -196,6 +207,9 @@ body .container .row_serv .bkgr_imgs {
   height: 550px;
   width: 100vw;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 body .container .row_serv .bkgr_imgs img {
   opacity: 0.5;
@@ -230,7 +244,7 @@ body .container .row_serv a span {
 }
 body .container #services_section .row_h2_serv {
   padding: 48px 0 0 0;
-  margin: 24px 0 16px 0;
+  margin: 0 0 16px 0;
   text-align: center;
 }
 body .container #services_section .row .col-md {
@@ -280,6 +294,12 @@ body .container .card {
   margin: 3px 5px 20px 5px;
   background-color: #fff;
 }
+body .container .about_us_text {
+  display: flex;
+  justify-content: center;
+  margin: 0 5px;
+  text-align: justify;
+}
 @media only screen and (max-width: 385px) {
   body .container #col_globe_img #globe_img {
     width: 320px;
@@ -289,6 +309,9 @@ body .container .card {
   body .container .row_serv .bkgr_text h1 {
     font-size: 35px;
     margin: 0 0px;
+  }
+  body .container .imgs_info_section img {
+    width: 80vw;
   }
 }
 @media only screen and (max-width: 1000px) {
@@ -301,6 +324,9 @@ body .container .card {
     font-size: 42px;
     margin: 0 150px;
   }
+  body .container .row_serv .bkgr_imgs {
+    display: block;
+  }
   body .container .row_serv .bkgr_imgs img {
     width: 100vw;
   }
@@ -309,12 +335,22 @@ body .container .card {
   body nav {
     backdrop-filter: blur(5px);
     border-bottom: solid black 1px;
+    background-color: #677483;
+    opacity: 0.925;
+  }
+  body nav .div_navbrand {
+    height: 40px;
+    display: flex;
+    align-items: end;
   }
   body nav .navbar-brand {
     display: contents;
   }
   body nav .navbar-brand a {
     margin-left: 100px;
+  }
+  body nav .navbar-brand a:hover {
+    color: #fff;
   }
   body nav .offcanvas-body {
     margin: 0;
@@ -326,6 +362,9 @@ body .container .card {
   }
   body nav .offcanvas-body ul li {
     margin-right: 15px;
+  }
+  body nav .offcanvas-body ul li a:hover {
+    color: #fff;
   }
   body nav .nav_things {
     margin: 0 10px 0 0;
@@ -343,9 +382,13 @@ body .container .card {
     margin: 170px 0 20px 0;
     text-align: left;
   }
+  body .container #row_h1_img h1 {
+    position: relative;
+    top: 90px;
+  }
   body .container #info_portada {
     position: relative;
-    top: -370px;
+    top: -340px;
     text-align: left;
   }
   body .container #col_globe_img {
@@ -354,12 +397,22 @@ body .container .card {
   body .container #col_globe_img #globe_img {
     width: 500px;
     position: relative;
-    top: -62px;
+    top: -45px;
   }
   body .container #portada_btns {
     position: relative;
-    top: -370px;
+    top: -330px;
     text-align: left;
+  }
+  body .container #carouselExampleCaptions .carousel-inner {
+    height: 80vh;
+  }
+  body .container #carouselExampleCaptions .carousel-inner .carousel-caption {
+    position: absolute;
+    bottom: 50%;
+  }
+  body .container #carouselExampleCaptions .carousel-inner .carousel-caption h2 {
+    font-size: 55px;
   }
   body .container #carouselExampleCaptions .carousel-control-prev, body .container #carouselExampleCaptions .carousel-control-next {
     top: 50%;
@@ -395,14 +448,21 @@ body .container .card {
   }
   body .container #services_section .row_h2_serv {
     padding: 100px 0 0 0;
-    margin: 0 0 16px 0;
+    margin: 0 0 40px 0;
     text-align: center;
+  }
+  body .container #services_section .row_h2_serv h2 {
+    font-size: 38px;
   }
   body .container #services_section .serv_row_2 {
     margin: 55px 150px 85px 150px;
   }
   body .container .faq_box {
     font-size: larger;
+  }
+  body .container .about_us_text {
+    margin: 0 120px 60px 120px;
+    font-size: 20px;
   }
 }
 @media only screen and (min-width: 1300px) {
@@ -425,6 +485,10 @@ body .container .card {
   body nav .offcanvas-body ul {
     position: relative;
     right: -320px;
+  }
+  body .row_serv .bkgr_imgs img {
+    position: relative;
+    top: -25%;
   }
 }
 @media only screen and (min-width: 1600px) {

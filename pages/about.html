@@ -12,15 +12,17 @@
 </head>
 <body>
     <!--Nav-->
-    <nav class="navbar fixed-top navbar-expand-xl pb-0">
+    <nav id="navbar" class="navbar fixed-top navbar-expand-xl pb-0">
         <div class="container-fluid">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
 
-            <a class="navbar-brand" href="../index.html">@ Worldrun Tailor Services</a>
-
+            <div class="div_navbrand">
+                <a class="navbar-brand" href="../index.html">@ Worldrun Tailor Services</a>
+            </div>
+            
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 
                 <div class="offcanvas-header">
@@ -78,9 +80,52 @@
     <main class="d-flex justify-content-center">
         <div class="container">
 
+            <div class="row row_serv">
+                <div class="col p-0">
+                    <div class="bkgr_text">
+                        <h1>Who are we?</h1>
+                        <small>Leading in our field for over 25 years.</small>
+                    </div>
+                    <div class="bkgr_imgs">
+                        <img src="../resources/carousel-imgs/7.png" alt="">
+                    </div>
+                    
+                    <a href="#services_section">
+                        <span class="material-symbols-sharp">expand_more</span>
+                    </a>
+                </div>
+            </div>
             
-              
+            <!--Services Section-->
+            <section id="services_section">
 
+                <div class="row row_h2_serv">
+                    <div class="col">
+                        <h2>Our Company</h2>
+                    </div>
+                </div>
+
+                <div class="row about_us_text">
+                    <div class="col">
+                        <p><strong>We are an international counseling enterprise</strong> on diverse areas, specially in logistics and transportation, foreign trade, investment channeling and economic legal consultancy. 
+                        <br><br>
+                        We provide our clients a wide range of strategies directed not only to Latin America but to the rest of the World as well.
+                        <br><br>
+                        If your Company wants to be integrated to the Global Market and participate in foreign trade, <strong>you must develop and incorporate the skills to operate and manage the logistics of your Business.</strong> 
+                        <br><br>
+                        We dedicate ourselves to providing added value services, expanding  business opportunities on an International scale through <strong>fast and efficient interaction between importers and exporters</strong> of manufactured products and raw materials.
+                        <br><br>
+                        To ensure our operation, <strong>we consolidate strategic alliances with specialized firms</strong> that support us in our activities, which allows us to satisfy each and every one of the requirements in the distribution and transportation that your company might need in the least amount of time possible and with the <strong>best service-cost quality</strong>.
+                        <br><br>
+                        <strong>We count with over 25 years of experience</strong>, mainly in MERCOSUR, providing personalized and confidential attention to our costumers. We are open to an increasingly globalized world. 
+                        </p>
+                    </div>
+                </div>
+
+
+                
+            </section><!--End of services section-->
+            
         </div>
         <!--End of .container-->
     </main>
@@ -114,6 +159,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./js/script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>
