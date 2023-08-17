@@ -89,6 +89,19 @@ body .container {
   margin: 25px 0px;
   text-align: center;
 }
+body .container #landing_page {
+  position: relative;
+  top: 0;
+  z-index: 9;
+  color: white;
+}
+body .container #home_arrow_down {
+  color: white;
+  border: solid 1px white;
+  border-radius: 1.2rem;
+  position: relative;
+  top: -60px;
+}
 body .container #row_h1_img {
   margin: 50px 0 20px 0;
 }
@@ -145,16 +158,19 @@ body .container .learn-more-btn:hover {
   background-color: #363949;
 }
 body .container #carouselExampleCaptions {
-  margin: 100px 0 50px 0;
+  position: absolute;
+  top: 0;
+  height: 100vh;
 }
 body .container #carouselExampleCaptions .carousel-inner {
   width: 100vw;
+  height: 100vh;
 }
 body .container #carouselExampleCaptions .carousel-inner .bkgr_carousel {
   background-color: black;
 }
 body .container #carouselExampleCaptions .carousel-inner .bkgr_carousel img {
-  opacity: 0.6;
+  opacity: 0.275;
 }
 body .container #carouselExampleCaptions .carousel-control-prev {
   position: absolute;
@@ -300,6 +316,10 @@ body .container .about_us_text {
   margin: 0 5px;
   text-align: justify;
 }
+body .container #contact_section .col_forms {
+  display: flex;
+  justify-content: center;
+}
 body .container #contact_section .hide {
   opacity: 0;
   padding: 0;
@@ -355,7 +375,7 @@ body .container #contact_section #message_input textarea {
   border-radius: 5px;
   outline: none;
   position: relative;
-  width: 500px;
+  width: 250px;
 }
 body .container #contact_section #message_input textarea:focus,
 body .container #contact_section #message_input textarea:valid {
@@ -368,6 +388,23 @@ body .container #contact_section #message_input textarea:valid ~ span, body .con
 }
 body .container #contact_section #message_input span {
   top: 20px;
+}
+body .container #contact_section .anchor_contact {
+  display: flex;
+  max-width: fit-content;
+  text-decoration: none;
+  color: black;
+}
+body .container #contact_section #col_map {
+  display: flex;
+  justify-content: center;
+}
+body .container #contact_section #col_map .img_map {
+  height: 20%;
+  max-width: 85vw;
+}
+body .container #contact_section #col_map .img_map img {
+  width: 100%;
 }
 @media only screen and (max-width: 385px) {
   body .container #col_globe_img #globe_img {
@@ -399,13 +436,33 @@ body .container #contact_section #message_input span {
   body .container .row_serv .bkgr_imgs img {
     width: 100vw;
   }
+  body .container #contact_section #message_input {
+    width: 456px;
+  }
+  body .container #contact_section #message_input textarea {
+    width: 456px;
+  }
+  body .container #contact_section #col_map .img_map {
+    height: 100%;
+    overflow: hidden;
+  }
+  body .container #contact_section #col_map .img_map img {
+    width: 100%;
+  }
 }
 @media only screen and (min-width: 1200px) {
+  body .nav_bkgr_black_transp {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 79px;
+    z-index: 777;
+    opacity: 0.4;
+  }
   body nav {
     backdrop-filter: blur(5px);
     border-bottom: solid black 1px;
-    background-color: #677483;
-    opacity: 0.925;
   }
   body nav .div_navbrand {
     height: 40px;
@@ -414,12 +471,13 @@ body .container #contact_section #message_input span {
   }
   body nav .navbar-brand {
     display: contents;
+    color: #fff;
   }
   body nav .navbar-brand a {
     margin-left: 100px;
   }
-  body nav .navbar-brand a:hover {
-    color: #fff;
+  body nav .navbar-brand:hover {
+    color: #F7D060;
   }
   body nav .offcanvas-body {
     margin: 0;
@@ -432,8 +490,14 @@ body .container #contact_section #message_input span {
   body nav .offcanvas-body ul li {
     margin-right: 15px;
   }
-  body nav .offcanvas-body ul li a:hover {
+  body nav .offcanvas-body ul li a {
     color: #fff;
+  }
+  body nav .offcanvas-body ul li a:hover {
+    color: #F7D060;
+  }
+  body nav .offcanvas-body ul li .nav-link.active {
+    color: #F7D060;
   }
   body nav .nav_things {
     margin: 0 10px 0 0;
@@ -446,6 +510,7 @@ body .container #contact_section #message_input span {
   body nav .nav_things .globe_svg {
     position: relative;
     top: -5px;
+    color: #6C9BCF;
   }
   body .container #row_h1_img {
     margin: 170px 0 20px 0;
@@ -454,11 +519,18 @@ body .container #contact_section #message_input span {
   body .container #row_h1_img h1 {
     position: relative;
     top: 90px;
+    font-size: 3rem;
   }
   body .container #info_portada {
     position: relative;
-    top: -340px;
+    top: -320px;
     text-align: left;
+  }
+  body .container #info_portada p {
+    font-size: 1.75rem;
+  }
+  body .container #info_portada p small {
+    font-size: 1.15rem;
   }
   body .container #col_globe_img {
     justify-content: end;
@@ -467,6 +539,7 @@ body .container #contact_section #message_input span {
     width: 500px;
     position: relative;
     top: -45px;
+    opacity: 0;
   }
   body .container #portada_btns {
     position: relative;
@@ -474,11 +547,14 @@ body .container #contact_section #message_input span {
     text-align: left;
   }
   body .container #carouselExampleCaptions .carousel-inner {
-    height: 80vh;
+    height: 100vh;
+  }
+  body .container #carouselExampleCaptions .carousel-inner #caption_downbad {
+    bottom: 45%;
   }
   body .container #carouselExampleCaptions .carousel-inner .carousel-caption {
     position: absolute;
-    bottom: 50%;
+    bottom: 35%;
   }
   body .container #carouselExampleCaptions .carousel-inner .carousel-caption h2 {
     font-size: 55px;
@@ -533,6 +609,12 @@ body .container #contact_section #message_input span {
     margin: 0 120px 60px 120px;
     font-size: 20px;
   }
+  body .container #contact_section #message_input {
+    width: 535px;
+  }
+  body .container #contact_section #message_input textarea {
+    width: 535px;
+  }
 }
 @media only screen and (min-width: 1300px) {
   body nav .offcanvas-body ul {
@@ -548,6 +630,12 @@ body .container #contact_section #message_input span {
   body .container .row_serv .bkgr_text h1 {
     font-size: 45px;
     margin: 0 295px;
+  }
+  body .container #contact_section #message_input {
+    width: 580px;
+  }
+  body .container #contact_section #message_input textarea {
+    width: 580px;
   }
 }
 @media only screen and (min-width: 1500px) {
