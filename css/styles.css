@@ -172,7 +172,7 @@ body .container #carouselExampleCaptions .carousel-inner .bkgr_carousel {
   background-color: black;
 }
 body .container #carouselExampleCaptions .carousel-inner .bkgr_carousel img {
-  opacity: 0.275;
+  opacity: 0.35;
   height: 650px;
   width: auto;
   overflow-x: hidden;
@@ -543,7 +543,7 @@ body .container #contact_section #col_map .img_map img {
     text-align: left;
   }
   body .container #home_arrow_down {
-    margin-top: 260px;
+    margin-top: 240px;
     font-size: 25px;
     opacity: 1;
   }
@@ -562,7 +562,7 @@ body .container #contact_section #col_map .img_map img {
   }
   body .container #carouselExampleCaptions .carousel-inner .bkgr_carousel img {
     height: 100%;
-    width: 100%;
+    width: 100vw;
   }
   body .container #carouselExampleCaptions .carousel-control-prev, body .container #carouselExampleCaptions .carousel-control-next {
     top: 50%;

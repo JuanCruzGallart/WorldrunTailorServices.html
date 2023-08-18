@@ -254,7 +254,7 @@ body{
                 .bkgr_carousel{
                     background-color: black;
                     img{
-                        opacity: 0.275;
+                        opacity: 0.35;
                         height: 650px;
                         width: auto;
                         overflow-x: hidden;
@@ -782,7 +782,7 @@ body{
             }
 
             #home_arrow_down{
-                margin-top: 260px;
+                margin-top: 240px;
                 font-size: 25px;
                 opacity: 1;
             }
@@ -808,7 +808,7 @@ body{
                     .bkgr_carousel{
                         img{
                             height: 100%;
-                            width: 100%;
+                            width: 100vw;
                         }
                     }
                 }
