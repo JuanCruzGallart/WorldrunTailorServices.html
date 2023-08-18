@@ -163,12 +163,14 @@ body{
             color: white;
             border: solid 1px white;
             border-radius: $border-radius-2;
-            position: relative;
-            top: -60px;
+            margin-top: 55px;
         }
 
         #row_h1_img{
-            margin: 50px 0 20px 0;
+            margin: 150px 0 60px 0;
+            h1{
+                font-size: 2.1rem;
+            }
         }
 
         .row{
@@ -191,10 +193,10 @@ body{
 
         #info_portada{
             p{
-                font-size: 1.2rem;
+                font-size: 1.3rem;
 
                 small{
-                    font-size: 0.75em;
+                    font-size: 0.9rem;
                     line-height: normal;
                 }
             }
@@ -203,6 +205,7 @@ body{
         #portada_btns{
             display: flex;
             justify-content: center;
+            margin-top: 50px;
         }
 
         button{
@@ -219,7 +222,7 @@ body{
             background-color: $color-dark;
             transition: all 0.5s ease;
             margin-right: 15px;
-            border: solid 2px $color-dark;
+            border: solid 2px $color-background;
         }
         .get-started-btn:hover{
             color:$color-dark;
@@ -236,24 +239,25 @@ body{
         .learn-more-btn:hover{
             color: $color-white;
             background-color: $color-dark;
+            border: solid 2px $color-background;
         }
 
         //Carousel Styles
         #carouselExampleCaptions{
-            // margin: 100px 0 50px 0;
             position: absolute;
             top: 0;
-            // z-index: 1;
-            height: 100vh;
+            // opacity: 0;
 
             .carousel-inner{
                 width: 100vw;
-                height: 100vh;
                 
                 .bkgr_carousel{
                     background-color: black;
                     img{
                         opacity: 0.275;
+                        height: 650px;
+                        width: auto;
+                        overflow-x: hidden;
                     }
                 }
             }
@@ -263,12 +267,14 @@ body{
                 top: 45%;
                 display: flex;
                 justify-content: start;
+                display: none;
             }
             .carousel-control-next{
                 position: absolute;
                 top: 45%;
                 display: flex;
                 justify-content: end;
+                display: none;
             }
         }
         
@@ -604,6 +610,10 @@ body{
                 }
             }
         }
+
+        #info_section_1{
+            margin-top: 30px;
+        }
     }
 
     @media only screen and (min-width: 1000px){
@@ -734,46 +744,51 @@ body{
                 text-align: left;
 
                 h1{
-                    position: relative;
-                    top: +90px;
+                    // position: relative;
+                    // top: +90px;
+                    margin-top: 90px;
                     font-size: 3rem;
                 }
             }
 
             #info_portada{
-                position: relative;
-                top: -320px;
+                // position: relative;
+                // top: -320px;
                 text-align: left;
 
                 p{
                     font-size: 1.75rem;
-                    small{
+                }
+                small{
                         font-size: 1.15rem;
                     }
-                }
             }
 
-            #col_globe_img{
-                justify-content: end;
+            // #col_globe_img{
+            //     justify-content: end;
 
-                #globe_img{
-                    width: 500px;
-                    position: relative;
-                    top: -45px;
-                    opacity: 0;
-                }
-            }  
+            //     #globe_img{
+            //         width: 500px;
+            //         position: relative;
+            //         top: -45px;
+            //         opacity: 0;
+            //     }
+            // }  
 
             #portada_btns{
-                position: relative;
-                top: -330px;
+                // position: relative;
+                // top: -330px;
                 text-align: left;
+            }
+
+            #home_arrow_down{
+                margin-top: 260px;
+                font-size: 25px;
+                opacity: 1;
             }
             
             //styles for the carousel...  
             #carouselExampleCaptions{
-                // display: none;
-
                 .carousel-inner{
                     height: 100vh;
 
@@ -787,6 +802,13 @@ body{
 
                         h2{
                             font-size: 55px;
+                        }
+                    }
+
+                    .bkgr_carousel{
+                        img{
+                            height: 100%;
+                            width: 100%;
                         }
                     }
                 }
