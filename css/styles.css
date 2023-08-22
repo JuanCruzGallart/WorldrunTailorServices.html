@@ -27,19 +27,47 @@ body nav .navbar-toggler {
   padding: 3px;
 }
 body nav .container-fluid, body nav .container {
-  overflow: hidden;
+  max-height: 71px;
 }
 body nav .navbar-brand {
   display: none;
   font-size: 30px;
 }
 body nav .nav_things {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 10px;
 }
-body nav svg {
+body nav .nav_things .globe_svg {
+  color: #363949;
+  font-size: 30px;
+}
+body nav .nav_things .btn, body nav .nav_things .btn-dark {
+  background: none;
+  border: none;
+  position: relative;
+  top: -5px;
+}
+body nav .nav_things a {
+  text-decoration: none;
+  cursor: poiter;
+}
+body nav .nav_things span {
   cursor: pointer;
+}
+body nav .nav_things #dropdown_lang {
+  position: absolute;
+  top: 650px;
+}
+body nav .nav_things #dropdown_lang li {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  cursor: pointer;
+}
+body nav .nav_things #dropdown_lang img {
+  width: 35px;
+  position: absolute;
+  right: 20px;
 }
 body nav #offcanvasNavbar {
   width: 310px;
@@ -49,34 +77,6 @@ body nav .offcanvas-body {
   margin: 30px 0 0 20px;
   display: flex;
   flex-direction: column;
-}
-body nav .offcanvas-body .globe_svg {
-  position: relative;
-  top: -5px;
-}
-body nav .offcanvas-body .dark-mode {
-  background-color: rgba(132, 139, 200, 0.18);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 33px;
-  width: 70px;
-  cursor: pointer;
-  border-radius: 0.4rem;
-  border: solid 1px black;
-}
-body nav .offcanvas-body .dark-mode span {
-  font-size: 1.6rem;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-body nav .offcanvas-body .dark-mode span.active {
-  background-color: #6C9BCF;
-  color: white;
-  border-radius: 0.4rem;
 }
 body nav .nav-item {
   margin: 5px 0 5px 0;
@@ -513,14 +513,17 @@ body .container #contact_section #col_map .img_map img {
     margin: 0 10px 0 0;
     position: relative;
     top: 22px;
-    flex-direction: row;
-    justify-content: space-around;
     width: 150px;
   }
   body nav .nav_things .globe_svg {
-    position: relative;
-    top: -5px;
-    color: #6C9BCF;
+    color: #fff;
+    font-size: 2.2rem;
+  }
+  body nav .nav_things #dropdown_lang {
+    top: 0%;
+    position: absolute;
+    top: 60px;
+    right: 30px;
   }
   body .container #row_h1_img {
     margin: 170px 0 20px 0;

@@ -75,7 +75,8 @@ body{
         }
         
         .container-fluid, .container{
-            overflow: hidden;
+            // overflow: hidden;
+            max-height: 71px;
         }
 
         .navbar-brand{
@@ -84,14 +85,48 @@ body{
         }
 
         .nav_things{
-            display: flex;
-            justify-content: space-between;
             margin-bottom: 10px;
             // flex-direction: column;
-        }
 
-        svg{
-            cursor: pointer;
+            .globe_svg{
+                color: $color-dark;
+                font-size: 30px;
+            }
+
+            .btn,.btn-dark{
+                background:none;
+                border: none;
+                position: relative;
+                top: -5px;
+            }
+
+            a{
+                text-decoration: none;
+                cursor: poiter;
+            }
+
+            span{
+                cursor: pointer;
+            }
+
+            #dropdown_lang{
+                position: absolute;
+                top: +650px;
+                
+                li{
+                    font-size: 1.2rem;
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 0;
+                    cursor: pointer;
+                }
+
+                img{
+                    width: 35px;
+                    position: absolute;
+                    right: +20px;
+                }
+            }
         }
 
         #offcanvasNavbar{
@@ -103,38 +138,6 @@ body{
             margin: 30px 0 0 20px;
             display: flex;
             flex-direction: column;
-
-            .globe_svg{
-                position: relative;
-                top: -5px;
-            }
-
-            .dark-mode{
-                background-color: $color-light;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                height: 33px;
-                width: 70px;
-                cursor: pointer;
-                border-radius: $border-radius-1;
-                border: solid 1px black;
-
-                span{
-                    font-size: 1.6rem;
-                    width: 50%;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-
-                span.active{
-                    background-color: $color-primary;
-                    color: white;
-                    border-radius: $border-radius-1;
-                }
-            }
         }
 
         .nav-item{
@@ -724,14 +727,18 @@ body{
                 margin: 0 10px 0 0;
                 position: relative;
                 top: +22px;
-                flex-direction: row;
-                justify-content: space-around;
                 width: 150px;
 
                 .globe_svg{
-                    position: relative;
-                    top: -5px;
-                    color: $color-primary;
+                    color: $color-white;
+                    font-size: 2.2rem;
+                }
+
+                #dropdown_lang{
+                    top: 0%;
+                    position: absolute;
+                    top: +60px;
+                    right: +30px;
                 }
             }
         }//end of nav styles
