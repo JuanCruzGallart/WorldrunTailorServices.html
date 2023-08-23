@@ -29,10 +29,6 @@ let p_n2 = document.getElementById("p_n2");
 let lang = null;
 
 espBtn.addEventListener("click", ()=>{
-    lang = "esp"
-})
-
-if (lang="esp"){
     h1Land.innerHTML = landingIndexEsp["h1"];
     pLand.innerHTML = landingIndexEsp["p"];
     smallLand.innerHTML = landingIndexEsp["small"];
@@ -42,10 +38,8 @@ if (lang="esp"){
     p_n1.innerHTML = landingIndexEsp["p_n1"];
     h2_n2.innerHTML = landingIndexEsp["h2_n2"];
     p_n2.innerHTML = landingIndexEsp["p_n2"];
-}
-
-
+})
 
 engBtn.addEventListener("click", ()=>{
-    lang = null
+    location.reload();
 })

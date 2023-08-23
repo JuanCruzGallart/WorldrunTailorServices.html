@@ -66,12 +66,41 @@ body{
         }
     }
 
+    .nav_bkgr_black_transp{
+        background-color: black;
+        position: fixed;
+        top: 18px;
+        left:12px;
+        width: 44px;
+        height: 44px;
+        z-index: 777;
+        opacity: 0.4;
+    }
+
     nav{
+        .navbar-toggler:focus,
+        .navbar-toggler:active{
+            outline: none;
+            box-shadow: none;
+        }
+
         .navbar-toggler{
             backdrop-filter: blur(2px);
-            border-radius: $border-radius-1;
-            border: solid 1px rgba(255, 255, 255, 0.2);
             padding: 3px;
+            height: 44px;
+            width: 44px;
+            margin-top: 10px;
+            border: solid black 1px;
+            border-radius: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            span{
+                color: $color-white;
+                font-weight: 200;
+                font-size: 35px;
+            }
         }
         
         .container-fluid, .container{
@@ -102,7 +131,7 @@ body{
 
             a{
                 text-decoration: none;
-                cursor: poiter;
+                cursor: pointer;
             }
 
             span{
@@ -252,15 +281,20 @@ body{
             // opacity: 0;
 
             .carousel-inner{
-                width: 100vw;
-                
+
                 .bkgr_carousel{
                     background-color: black;
+                    display: flex;
+                    overflow-x: hidden;
+                    width: 100vw;
+                    display: flex;
+                    justify-content: center;
+
                     img{
-                        opacity: 0.35;
+                        opacity: 0.5;
                         height: 650px;
                         width: auto;
-                        overflow-x: hidden;
+                        justify-self: center;
                     }
                 }
             }
@@ -670,6 +704,7 @@ body{
             background-color: black;
             position: fixed;
             top: 0;
+            left: 0;
             width: 100vw;
             height: 79px;
             z-index: 777;
