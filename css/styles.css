@@ -62,16 +62,6 @@ body nav .navbar-brand {
 body nav .nav_things {
   margin-bottom: 10px;
 }
-body nav .nav_things .globe_svg {
-  color: #363949;
-  font-size: 30px;
-}
-body nav .nav_things .btn, body nav .nav_things .btn-dark {
-  background: none;
-  border: none;
-  position: relative;
-  top: -5px;
-}
 body nav .nav_things a {
   text-decoration: none;
   cursor: pointer;
@@ -187,37 +177,19 @@ body .container .learn-more-btn:hover {
   background-color: #363949;
   border: solid 2px #f6f6f9;
 }
-body .container #carouselExampleCaptions {
+body .container .bkgr_landing {
   position: absolute;
   top: 0;
-}
-body .container #carouselExampleCaptions .carousel-inner .bkgr_carousel {
   background-color: black;
-  display: flex;
   overflow-x: hidden;
   width: 100vw;
   display: flex;
   justify-content: center;
 }
-body .container #carouselExampleCaptions .carousel-inner .bkgr_carousel img {
+body .container .bkgr_landing img {
   opacity: 0.5;
   height: 650px;
   width: auto;
-  justify-self: center;
-}
-body .container #carouselExampleCaptions .carousel-control-prev {
-  position: absolute;
-  top: 45%;
-  display: flex;
-  justify-content: start;
-  display: none;
-}
-body .container #carouselExampleCaptions .carousel-control-next {
-  position: absolute;
-  top: 45%;
-  display: flex;
-  justify-content: end;
-  display: none;
 }
 body .container #info_section2 {
   display: flex;
@@ -579,26 +551,14 @@ body .container #contact_section #col_map .img_map img {
     font-size: 25px;
     opacity: 1;
   }
-  body .container #carouselExampleCaptions .carousel-inner {
+  body .container .bkgr_landing {
     height: 100vh;
-  }
-  body .container #carouselExampleCaptions .carousel-inner #caption_downbad {
-    bottom: 45%;
-  }
-  body .container #carouselExampleCaptions .carousel-inner .carousel-caption {
-    position: absolute;
-    bottom: 35%;
-  }
-  body .container #carouselExampleCaptions .carousel-inner .carousel-caption h2 {
-    font-size: 55px;
-  }
-  body .container #carouselExampleCaptions .carousel-inner .bkgr_carousel img {
-    height: 100%;
     width: 100vw;
+    overflow-x: hidden;
   }
-  body .container #carouselExampleCaptions .carousel-control-prev, body .container #carouselExampleCaptions .carousel-control-next {
-    top: 50%;
-    display: block;
+  body .container .bkgr_landing img {
+    height: 100vh;
+    width: 100vw;
   }
   body .container .info_sections .item {
     order: 1;
