@@ -46,24 +46,83 @@ body{
 
     footer{
         border-top: solid black 1px;
-        padding-top: 25px;
-        margin: 0 0 25px 0;
+        padding: 25px 0 0 0 ;
+        margin: 0;
         // background: linear-gradient(to right, #8682A5, #9E91BA, #6B7CAA);
         // background: linear-gradient(to right, #00093c, #2d0b00);
-        // color: white;
+        // background: rgb(26, 26, 26);
+        background: linear-gradient(to right, rgb(39, 39, 39), rgb(26, 26, 26));
+        backdrop-filter: blur(2px);
+        color: $color-white;
         overflow: hidden;
 
-        .row{
-            .col-xl{
-                display: flex;
-                justify-content: start;
-                
+        section{
+            margin: 10px 80px 25px 0 ;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
 
-                span{
-                    margin-right: 5px;
+            h2{
+                margin-bottom: 30px;
+            }
+            
+            h3{
+                width: fit-content;
+                margin-bottom: 30px;
+                position: relative; /* Add position relative to the h3 element */
+
+                .underline{
+                    width: 100%;
+                    height: 5px;
+                    background: #767676;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    position: absolute;
+                    top: +35px;
+                    left: 0;
+
+                    span{
+                        width: 15px;
+                        height: 100%;
+                        background: $color-white;
+                        border-radius: 3px;
+                        position: absolute;
+                        top: 0;
+                        left: -20px; /* Start the span off-screen to the left */
+                        animation: moving 2s linear infinite;
+
+                        @keyframes moving{
+                            0%{
+                                left: -20px;
+                            }
+
+                            100%{
+                                left:100%;
+                            }
+                        }
+                    }
                 }
             }
-        }
+
+            .row{
+                margin: 0 20px;
+                ul{
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+    
+                    a{
+                        display: flex;
+                        flex-direction: row;
+                        text-decoration: none;
+                        // color: var(--bs-body-color);
+                        color: $color-white;
+                        font-size: 1.1em;
+                    }
+                }
+               
+            }
+        }  
     }
 
     .nav_bkgr_black_transp{
@@ -602,6 +661,19 @@ body{
         }
     }
 
+    @media only screen and (max-width: 800px){
+        footer{
+            section{
+                flex-direction: column;
+                margin: 10px 0 25px 0;
+
+                .row{
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+
     @media only screen and (max-width: 1000px){
         .row_serv{
             .bkgr_imgs{
@@ -657,8 +729,6 @@ body{
                     }
                 }
             }
-            
-
         }
     }
 
