@@ -51,7 +51,7 @@ body{
         // background: linear-gradient(to right, #8682A5, #9E91BA, #6B7CAA);
         // background: linear-gradient(to right, #00093c, #2d0b00);
         // background: rgb(26, 26, 26);
-        background: linear-gradient(to right, rgb(39, 39, 39), rgb(26, 26, 26));
+        background:  rgb(39, 39, 39);
         backdrop-filter: blur(2px);
         color: $color-white;
         overflow: hidden;
@@ -235,6 +235,10 @@ body{
             top: 0;
             z-index: 9;
             color: white;
+        }
+
+        #index_landing_h1{
+            font-weight: 700;
         }
 
         #home_arrow_down{

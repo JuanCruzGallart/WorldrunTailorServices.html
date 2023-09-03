@@ -11,7 +11,7 @@ body footer {
   border-top: solid black 1px;
   padding: 25px 0 0 0;
   margin: 0;
-  background: linear-gradient(to right, rgb(39, 39, 39), rgb(26, 26, 26));
+  background: rgb(39, 39, 39);
   backdrop-filter: blur(2px);
   color: #fff;
   overflow: hidden;
@@ -163,6 +163,9 @@ body .container #landing_page {
   top: 0;
   z-index: 9;
   color: white;
+}
+body .container #index_landing_h1 {
+  font-weight: 700;
 }
 body .container #home_arrow_down {
   color: white;
