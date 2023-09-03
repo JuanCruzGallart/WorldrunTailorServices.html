@@ -73,6 +73,9 @@ body footer section .row ul a {
   color: #fff;
   font-size: 1.1em;
 }
+body footer section .row ul a:hover {
+  color: #F7D060;
+}
 body .nav_bkgr_black_transp {
   background-color: black;
   position: fixed;
