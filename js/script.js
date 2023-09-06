@@ -36,12 +36,25 @@ const servEsp = {
     faq:`Preguntas Frecuentes`,
     faqSmall:``,
     pregunta1:`¿Cómo puedo contactarme con ustedes?`,
-    respuesta1:`Llamanos al +1 (786) 628-7922 o mandanos un correo a worldrunservices@gmail.com`
+    respuesta1:`Llamanos al +1 (786) 628-7922 o mandanos un correo a worldrunservices@gmail.com`,
+    pregunta2:`¿Trabajan en Asia?`,
+    respuesta2:`Sí, trabajamos en Asia, sobretodo en la parte oriental (Japón, Corea del Sur).`,
+    pregunta3:`¿Su experiencia en logística le ahorraría dinero a mi negocio?`,
+    respuesta3:`Sí, le aseguramos que nuestra experiencia en el campo no sólo le ahorraría dinero sino también incontables horas de trabajo e investigación.`,
+    pregunta4:`¿Cuánto tiempo llevan trabajando en este campo?`,
+    respuesta4:`Hace más de 25 años que trabajamos en el rubro.`
 }
 
 const contactEsp = {
     contH1:`Contacte a nuestro equipo`,
-    contSmall:`Estas son las maneras de contactarnos.`
+    contSmall:`Estas son las maneras de contactarnos.`,
+    contH2:`Envíenos un mensaje`,
+    contSmall2:`Responderemos en las próximas 24 horas`,
+    contEmail:`Correo`,
+    contNombre:`Nombre`,
+    contMsg:`Mensaje`,
+    contH22:`Oficinas`,
+    contH3: `Miami, Estados Unidos`,
 }
 
 const aboutEsp = {
@@ -134,10 +147,25 @@ let faq = document.getElementById("faq");
 let faqSmall = document.getElementById("faq_small");
 let pregunta1 = document.getElementById("pregunta1");
 let respuesta1 = document.getElementById("respuesta1");
+let pregunta2 = document.getElementById("pregunta2");
+let respuesta2 = document.getElementById("respuesta2");
+let pregunta3 = document.getElementById("pregunta3");
+let respuesta3 = document.getElementById("respuesta3");
+let pregunta4 = document.getElementById("pregunta4");
+let respuesta4 = document.getElementById("respuesta4");
+
 
 
 //Contact variables
-let contH1 = document.getElementById("") ;
+let contH1 = document.getElementById("cont_h1");
+let contSmall = document.getElementById("cont_small");
+let contH2 = document.getElementById("cont_h2");
+let contSmall2 = document.getElementById("cont_small2");
+let contEmail = document.getElementById("cont_email");
+let contNombre = document.getElementById("cont_nombre");
+let contMsg = document.getElementById("cont_msg");
+let contH22 = document.getElementById("cont_h22");
+let contH3 = document.getElementById("cont_h3");
 
 //About variables
 let aboutH1 = document.getElementById("about_h1");
@@ -145,6 +173,35 @@ let aboutSmall = document.getElementById("about_small");
 let aboutH2 = document.getElementById("about_h2");
 let aboutText = document.getElementById("about_text");
 
+
+let lang = localStorage.getItem("lang");
+let espBtn = document.getElementById("esp_btn");
+let engBtn = document.getElementById("eng_btn");
+let fired = localStorage.getItem("fired");
+changeLang(); //call the function so it loads the lang selected previously
+
+espBtn.addEventListener("click", ()=> {
+    lang = "esp";
+    console.log(lang);
+    localStorage.setItem("lang", lang);
+    console.log("Language: ", lang);
+    changeLang();
+})
+
+engBtn.addEventListener("click",()=>{
+    lang = "eng";
+    console.log(lang);
+    localStorage.setItem("lang", null);
+    console.log("Language: eng");
+    changeLang();
+
+})
+
+
+if(fired!=="true"){
+    document.addEventListener("DOMContentLoaded", fireSwal());
+    console.log(fired);
+}
 
 function changeLang(){
     if(lang == "eng"){
@@ -219,8 +276,22 @@ function changeLang(){
             faqSmall.innerHTML = servEsp["faqSmall"];
             pregunta1.innerHTML =servEsp["pregunta1"];
             respuesta1.innerHTML = servEsp["respuesta1"];
+            pregunta2.innerHTML = servEsp["pregunta2"];
+            respuesta2.innerHTML = servEsp["respuesta2"];
+            pregunta3.innerHTML = servEsp["pregunta3"];
+            respuesta3.innerHTML = servEsp["respuesta3"];
+            pregunta4.innerHTML = servEsp["pregunta4"];
+            respuesta4.innerHTML = servEsp["respuesta4"];
         }else if(contH1!=null){
-
+            contH1.innerHTML = contactEsp["contH1"];
+            contSmall.innerHTML = contactEsp["contSmall"];
+            contH2.innerHTML = contactEsp["contH2"];
+            contEmail.innerHTML = contactEsp["contEmail"];
+            contSmall2.innerHTML = contactEsp["contSmall2"];
+            contNombre.innerHTML = contactEsp["contNombre"];
+            contMsg.innerHTML = contactEsp["contMsg"];
+            contH22.innerHTML = contactEsp["contH22"];
+            contH3.innerHTML = contactEsp["contH3"];
         }else if(aboutH1!=null){
             aboutH1.innerHTML = aboutEsp["h1"];
             aboutSmall.innerHTML = aboutEsp["small"];
@@ -231,26 +302,38 @@ function changeLang(){
     }
 }
 
+function fireSwal(){
+    Swal.fire({
+        html:`
+        <div id="swalContainer">
+            <span class="material-symbols-sharp">translate</span>
+            <p>Choose your Language<br>Elija su Idioma<p>
+    
+            <div id="btnContainer">
+                <button class="swal_lang_btn">
+                    <a id="eng_btn">
+                        English
+                        <img src="./resources/united-states.png" alt="">
+                    </a>
+                </button>
+                
+                <button class="swal_lang_btn">
+                    <a id="esp_btn">
+                        Español 
+                        <img src="./resources/spain.png" alt="">
+                    </a>
+                </button>
+            </div>
+            <div id="small_swal">
+                <p>You can change your chosen language anytime by clicking on the "language" icon on the top-right</p>
+                <p>Puede cambiar su idioma elegido en cualquier momento haciendo click en el ícono de "lenguage" arriba a la derecha.</p>
+            </div>
+        </div>
+        `,
+        heightAuto:false,
+        showConfirmButton:false,
+        focusConfirm:false,
+    })
 
-let lang = localStorage.getItem("lang");
-let espBtn = document.getElementById("esp_btn");
-let engBtn = document.getElementById("eng_btn");
-console.log(lang);
-changeLang();
-
-espBtn.addEventListener("click", ()=> {
-    lang = "esp";
-    console.log(lang);
-    localStorage.setItem("lang", lang);
-    console.log("Language: ", lang);
-    changeLang();
-})
-
-engBtn.addEventListener("click",()=>{
-    lang = "eng";
-    console.log(lang);
-    localStorage.setItem("lang", null);
-    console.log("Language: eng");
-    changeLang();
-
-})
+    // localStorage.setItem("fired",true);
+}

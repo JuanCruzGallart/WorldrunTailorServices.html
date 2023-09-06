@@ -7,6 +7,67 @@ body {
 body strong {
   color: rgb(56, 56, 56);
 }
+body .swal2-popup {
+  height: 460px;
+}
+body #swalContainer span {
+  font-size: 3.4em;
+  border: 4px solid gray;
+  border-radius: 50%;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+body #swalContainer p {
+  font-size: 1.4em;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+}
+body #swalContainer p br {
+  margin: 10px 0;
+}
+body #swalContainer #small_swal {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  margin: 0 30px;
+}
+body #swalContainer #small_swal p {
+  font-size: 0.8em;
+  font-weight: 400;
+  margin: 10px 0;
+}
+body #swalContainer #btnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 40px 0 0 0;
+}
+body #swalContainer #btnContainer .swal_lang_btn {
+  display: flex;
+  flex-direction: row;
+  border-radius: 1.2rem;
+  background-color: rgba(132, 139, 200, 0.18);
+  color: #363949;
+  border: 3px solid #363949;
+  transition: all 0.3s;
+  padding: 0 10px;
+}
+body #swalContainer #btnContainer .swal_lang_btn a {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+body #swalContainer #btnContainer .swal_lang_btn a img {
+  max-width: 50px;
+}
+body #swalContainer #btnContainer .swal_lang_btn:hover {
+  background-color: #677483;
+  color: #fff;
+  border: 3px solid #1B9C85;
+}
+body #swalContainer #btnContainer .swal_lang_btn:focus {
+  outline: none;
+}
 body footer {
   border-top: solid black 1px;
   padding: 25px 0 0 0;
@@ -114,6 +175,7 @@ body nav .container-fluid, body nav .container {
 body nav .navbar-brand {
   display: none;
   font-size: 30px;
+  font-weight: 600;
 }
 body nav .nav_things {
   margin-bottom: 10px;
@@ -460,6 +522,9 @@ body .container #contact_section .anchor_contact {
   max-width: fit-content;
   text-decoration: none;
   color: black;
+}
+body .container #contact_section .anchor_contact:hover {
+  color: #1B9C85;
 }
 body .container #contact_section #col_map {
   display: flex;
