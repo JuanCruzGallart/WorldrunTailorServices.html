@@ -45,11 +45,9 @@ body{
     }
 
     //swal
-    .swal2-popup{
-        height: 460px;
-    }
-
     #swalContainer{
+        height: 460px;
+        
         span{
             font-size: 3.4em;
             border: 4px solid gray;
@@ -107,9 +105,9 @@ body{
             }
 
             .swal_lang_btn:hover{
-                background-color: $color-dark-variant;
+                background-color: $color-dark;
                 color: $color-white;
-                border: 3px solid $color-success;
+                // border: 3px solid $color-warning;
             }
 
             .swal_lang_btn:focus{

@@ -7,7 +7,7 @@ body {
 body strong {
   color: rgb(56, 56, 56);
 }
-body .swal2-popup {
+body #swalContainer {
   height: 460px;
 }
 body #swalContainer span {
@@ -61,9 +61,8 @@ body #swalContainer #btnContainer .swal_lang_btn a img {
   max-width: 50px;
 }
 body #swalContainer #btnContainer .swal_lang_btn:hover {
-  background-color: #677483;
+  background-color: #363949;
   color: #fff;
-  border: 3px solid #1B9C85;
 }
 body #swalContainer #btnContainer .swal_lang_btn:focus {
   outline: none;

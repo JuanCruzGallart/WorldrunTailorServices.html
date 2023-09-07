@@ -173,34 +173,67 @@ let aboutSmall = document.getElementById("about_small");
 let aboutH2 = document.getElementById("about_h2");
 let aboutText = document.getElementById("about_text");
 
-
+//Language function variables
 let lang = localStorage.getItem("lang");
 let espBtn = document.getElementById("esp_btn");
 let engBtn = document.getElementById("eng_btn");
 let fired = localStorage.getItem("fired");
+
 changeLang(); //call the function so it loads the lang selected previously
 
-espBtn.addEventListener("click", ()=> {
+espBtn.addEventListener("click", setEsp);
+engBtn.addEventListener("click",setEng);
+
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'bottom-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  });
+
+function setEsp(){
+    let swal = document.getElementsByClassName("swal2-container");
     lang = "esp";
-    console.log(lang);
     localStorage.setItem("lang", lang);
     console.log("Language: ", lang);
     changeLang();
-})
 
-engBtn.addEventListener("click",()=>{
-    lang = "eng";
-    console.log(lang);
-    localStorage.setItem("lang", null);
-    console.log("Language: eng");
-    changeLang();
+    if (swal!==null){
+        Swal.close();
+    }
 
-})
+    Toast.fire({
+        icon: 'success',
+        title: 'Español seleccionado'
+      });
+}
+function setEng(){
+    let swal = document.getElementsByClassName("swal2-container");
 
+    if (lang !== "null"){
+        lang = "eng";
+        localStorage.setItem("lang", null);
+        console.log("Language: eng");
+        changeLang();
+    }
+    if(swal !== null){
+        Swal.close();
+    }
+
+    document.addEventListener("DOMContentLoaded",Toast.fire({
+        icon: 'success',
+        title: 'English selected'
+      }))
+    
+}
 
 if(fired!=="true"){
-    document.addEventListener("DOMContentLoaded", fireSwal());
-    console.log(fired);
+    document.addEventListener("DOMContentLoaded", fireSwal);
 }
 
 function changeLang(){
@@ -311,21 +344,21 @@ function fireSwal(){
     
             <div id="btnContainer">
                 <button class="swal_lang_btn">
-                    <a id="eng_btn">
+                    <a id="eng_btn_swal">
                         English
                         <img src="./resources/united-states.png" alt="">
                     </a>
                 </button>
                 
                 <button class="swal_lang_btn">
-                    <a id="esp_btn">
+                    <a id="esp_btn_swal">
                         Español 
                         <img src="./resources/spain.png" alt="">
                     </a>
                 </button>
             </div>
             <div id="small_swal">
-                <p>You can change your chosen language anytime by clicking on the "language" icon on the top-right</p>
+                <p>You can change your chosen language anytime by clicking on the "language" icon on the top-right.</p>
                 <p>Puede cambiar su idioma elegido en cualquier momento haciendo click en el ícono de "lenguage" arriba a la derecha.</p>
             </div>
         </div>
@@ -335,5 +368,9 @@ function fireSwal(){
         focusConfirm:false,
     })
 
-    // localStorage.setItem("fired",true);
+    let espBtnSwal = document.getElementById("esp_btn_swal");
+    let engBtnSwal = document.getElementById("eng_btn_swal");
+    espBtnSwal.addEventListener("click",setEsp);
+    engBtnSwal.addEventListener("click", setEng);
+    localStorage.setItem("fired",true);
 }
