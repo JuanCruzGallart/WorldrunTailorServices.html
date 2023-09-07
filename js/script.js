@@ -224,12 +224,6 @@ function setEng(){
     if(swal !== null){
         Swal.close();
     }
-
-    document.addEventListener("DOMContentLoaded",Toast.fire({
-        icon: 'success',
-        title: 'English selected'
-      }))
-    
 }
 
 if(fired!=="true"){
@@ -239,7 +233,18 @@ if(fired!=="true"){
 function changeLang(){
     if(lang == "eng"){
         lang = null;
-        location.reload();
+        (async () => {
+            await new Promise(resolve => {
+                location.reload();
+                resolve();
+            });
+    
+            // After the page has finished reloading, show the Toast
+            Toast.fire({
+                icon: 'success',
+                title: 'English selected'
+            });
+        })();
     }else if(lang == "esp"){
 
         //Navigation Links
