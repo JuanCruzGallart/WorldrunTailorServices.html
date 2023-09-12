@@ -1,3 +1,4 @@
+//Make a .json file with all this
 const indexEsp = {
     h1: `Soluciones hechas a medida para su Negocio`,
     p: `Consultoría sobre Negocios Internacionales para la economía global`,
@@ -184,17 +185,17 @@ changeLang(); //call the function so it loads the lang selected previously
 espBtn.addEventListener("click", setEsp);
 engBtn.addEventListener("click",setEng);
 
-const Toast = Swal.mixin({
-    toast: true,
-    position: 'bottom-end',
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-      toast.addEventListener('mouseenter', Swal.stopTimer)
-      toast.addEventListener('mouseleave', Swal.resumeTimer)
-    }
-  });
+// const Toast = Swal.mixin({
+//     toast: true,
+//     position: 'bottom-end',
+//     showConfirmButton: false,
+//     timer: 3000,
+//     timerProgressBar: true,
+//     didOpen: (toast) => {
+//       toast.addEventListener('mouseenter', Swal.stopTimer)
+//       toast.addEventListener('mouseleave', Swal.resumeTimer)
+//     }
+//   });
 
 function setEsp(){
     let swal = document.getElementsByClassName("swal2-container");
@@ -379,3 +380,87 @@ function fireSwal(){
     engBtnSwal.addEventListener("click", setEng);
     localStorage.setItem("fired",true);
 }
+
+//form
+let form = document.getElementById("form")
+let email = document.getElementById("email").value.trim();
+let nameForm = document.getElementById("name").value;
+let msg = document.getElementById("message").value;
+
+form.addEventListener("submit", e =>{
+    e.preventDefault();
+    validateInputs();
+});
+
+function setValid(element){
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector(".invalid");
+
+    errorDisplay.innerText = "";
+    inputControl.classList.add("valid");
+    inputControl.classList.remove("invalid");
+};
+
+function setError(element, message){
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector(".invalid");
+
+    errorDisplay.innerText = message;
+    inputControl.classList.add("invalid");
+    inputControl.classList.remove("valid");
+}
+
+function isValidEmail(email){
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+};
+
+function validateInputs(){
+    let lang = localStorage.getItem("lang");
+    if(nameForm === ""){
+        setError(nameForm, "You have to fill in your name");
+    }else{
+        setValid(nameForm);
+    }
+
+    if(email === ""){
+        setError(email, "Email is required");
+    }else if(!isValidEmail(email)){
+        setError(email, "Provide an email address");
+    }else{
+        setValid(email);
+    }
+
+    if(msg===""){
+        setError(msg,"Write a message addressing your inquiries");
+    }else if(msg.length<15){
+        setError(msg, "Your message is too short");
+    }else{
+        setValid(msg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+// email.addEventListener("input", ()=>{
+//     let emailPattern = /@/;
+//     if(!emailPattern.test(email)){
+        
+//     }
+// })
+
+// nameForm.addEventListener("input", ()=>{
+//     if(nameForm=="s"){
+//         // let nameFormDiv = document.getElementById("name_form");
+//         // nameFormDiv.classList.add("invalid");
+//         alert("culo");
+//     }
+// })

@@ -231,12 +231,6 @@ body .container #landing_page {
 body .container #index_landing_h1 {
   font-weight: 700;
 }
-body .container #home_arrow_down {
-  color: white;
-  border: solid 1px white;
-  border-radius: 1.2rem;
-  margin-top: 55px;
-}
 body .container #row_h1_img {
   margin: 150px 0 60px 0;
 }
@@ -245,14 +239,6 @@ body .container #row_h1_img h1 {
 }
 body .container .row .col h1 {
   font-weight: 700;
-}
-body .container #col_globe_img {
-  display: flex;
-  justify-content: center;
-}
-body .container #col_globe_img #globe_img {
-  width: 400px;
-  padding: 0;
 }
 body .container #info_portada p {
   font-size: 1.3rem;
@@ -310,6 +296,9 @@ body .container .bkgr_landing img {
   opacity: 0.5;
   height: 650px;
   width: auto;
+}
+body .container #sections {
+  margin-top: 100px;
 }
 body .container #info_section2 {
   display: flex;
@@ -467,23 +456,34 @@ body .container #contact_section .inputBox input {
   font-size: 1em;
   transition: 0.3s;
 }
-body .container #contact_section .inputBox input:valid ~ span,
 body .container #contact_section .inputBox input:focus ~ span,
-body .container #contact_section .inputBox textarea:focus ~ span,
-body .container #contact_section .inputBox textarea:valid ~ span {
-  color: #00dfc4;
+body .container #contact_section .inputBox textarea:focus ~ span {
+  color: #F7D060;
   transform: translateX(10px) translateY(-7px);
   font-size: 0.65em;
   padding: 0 10px;
-  background-color: #f6f6f9;
-  border-left: 1px solid #00dfc4;
-  border-right: 1px solid #00dfc4;
   letter-spacing: 0.2em;
-  transition: 0.3s;
+  transition: 0.3s all ease-in-out;
+  background-color: #F7D060;
+  color: black;
+  border-radius: 2px;
 }
-body .container #contact_section .inputBox input:valid,
 body .container #contact_section .inputBox input:focus {
-  border: 1px solid #00dfc4;
+  border: 1px solid #F7D060;
+}
+body .container #contact_section .inputBox .valid span {
+  background-color: #1B9C85;
+  color: #1B9C85;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65em;
+  padding: 0 10px;
+  letter-spacing: 0.2em;
+  transition: 0.3s all ease-in-out;
+  color: black;
+  border-radius: 2px;
+}
+body .container #contact_section .inputBox .valid input, body .container #contact_section .inputBox .valid textarea {
+  border: 1px solid #1B9C85;
 }
 body .container #contact_section .inputBox span {
   position: absolute;
@@ -503,18 +503,20 @@ body .container #contact_section #message_input textarea {
   outline: none;
   position: relative;
   width: 250px;
+  margin-top: 20px;
+  padding: 15px;
+  overflow: hidden;
 }
-body .container #contact_section #message_input textarea:focus,
-body .container #contact_section #message_input textarea:valid {
-  border: 1px solid #00dfc4;
+body .container #contact_section #message_input textarea:focus {
+  border: 1px solid #F7D060;
 }
-body .container #contact_section #message_input textarea:valid ~ span, body .container #contact_section #message_input textarea:focus ~ span {
-  background-color: #00dfc4;
+body .container #contact_section #message_input textarea:focus ~ span {
+  background-color: #F7D060;
   color: black;
   border-radius: 2px;
 }
 body .container #contact_section #message_input span {
-  top: 20px;
+  top: 40px;
 }
 body .container #contact_section .anchor_contact {
   display: flex;
@@ -548,6 +550,11 @@ body .container #contact_section #col_map .img_map img {
   }
   body .container .imgs_info_section img {
     width: 80vw;
+  }
+}
+@media only screen and (min-width: 765px) {
+  body .container #sections {
+    margin-top: 200px;
   }
 }
 @media only screen and (max-width: 800px) {
@@ -590,6 +597,21 @@ body .container #contact_section #col_map .img_map img {
   }
   body .container #contact_section #col_map .img_map img {
     width: 100%;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-height: 800px) {
+  body .container #sections {
+    margin-top: 110px;
+  }
+}
+@media only screen and (min-width: 1200px) and (min-height: 900px) {
+  body .container #sections {
+    margin-top: 300px;
+  }
+}
+@media only screen and (min-width: 1600px) and (min-height: 900px) {
+  body .container #sections {
+    margin-top: 360px;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -677,11 +699,6 @@ body .container #contact_section #col_map .img_map img {
   }
   body .container #portada_btns {
     text-align: left;
-  }
-  body .container #home_arrow_down {
-    margin-top: 240px;
-    font-size: 25px;
-    opacity: 1;
   }
   body .container .bkgr_landing {
     height: 100vh;
