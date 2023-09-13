@@ -4,6 +4,14 @@ body {
   background-color: #f6f6f9;
   overflow-x: hidden;
 }
+body ::selection {
+  color: #F7D060;
+  background-color: #1B9C85;
+}
+body a {
+  text-decoration: none;
+  user-select: none;
+}
 body strong {
   color: rgb(56, 56, 56);
 }
@@ -177,7 +185,15 @@ body nav .navbar-brand {
   font-weight: 600;
 }
 body nav .nav_things {
-  margin-bottom: 10px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 20px;
+}
+body nav .nav_things #globe_svg {
+  color: #363949;
+}
+body nav .nav_things #globe_svg span {
+  font-size: 2em;
 }
 body nav .nav_things a {
   text-decoration: none;
@@ -188,7 +204,8 @@ body nav .nav_things span {
 }
 body nav .nav_things #dropdown_lang {
   position: absolute;
-  top: 650px;
+  top: -110px;
+  left: -10px;
 }
 body nav .nav_things #dropdown_lang li {
   font-size: 1.2rem;
@@ -196,6 +213,9 @@ body nav .nav_things #dropdown_lang li {
   justify-content: space-between;
   margin: 0;
   cursor: pointer;
+}
+body nav .nav_things #dropdown_lang li a:active {
+  background-color: transparent;
 }
 body nav .nav_things #dropdown_lang img {
   width: 35px;
@@ -298,7 +318,7 @@ body .container .bkgr_landing img {
   width: auto;
 }
 body .container #sections {
-  margin-top: 100px;
+  padding-top: 50px;
 }
 body .container #info_section2 {
   display: flex;
@@ -471,8 +491,9 @@ body .container #contact_section .invalid .error {
   position: absolute;
   left: 5px;
   color: #ff3860;
-  font-size: 12px;
+  font-size: 14px;
   height: 13px;
+  text-align: left;
 }
 body .container #contact_section .valid input {
   border: 1px solid black;
@@ -551,6 +572,9 @@ body .container #contact_section .inputBox span {
   text-transform: uppercase;
   transition: 0.3s all ease-in-out;
 }
+body .container #contact_section #message_input {
+  margin-top: 20px;
+}
 body .container #contact_section textarea {
   resize: none;
   box-shadow: none;
@@ -560,7 +584,7 @@ body .container #contact_section textarea {
   outline: none;
   position: relative;
   width: 250px;
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 15px;
   overflow: hidden;
 }
@@ -592,6 +616,11 @@ body .container #contact_section #col_map .img_map img {
     width: 320px;
   }
 }
+@media only screen and (min-width: 460px) {
+  body .container #sections {
+    padding-top: 100px;
+  }
+}
 @media only screen and (min-width: 600px) {
   body .container .row_serv .bkgr_text h1 {
     font-size: 35px;
@@ -599,11 +628,6 @@ body .container #contact_section #col_map .img_map img {
   }
   body .container .imgs_info_section img {
     width: 80vw;
-  }
-}
-@media only screen and (min-width: 765px) {
-  body .container #sections {
-    margin-top: 200px;
   }
 }
 @media only screen and (max-width: 800px) {
@@ -621,6 +645,11 @@ body .container #contact_section #col_map .img_map img {
   }
   body #info_section_1 {
     margin-top: 30px;
+  }
+}
+@media only screen and (min-width: 990px) {
+  body .container #sections {
+    margin-top: 50px;
   }
 }
 @media only screen and (min-width: 1000px) {
@@ -653,14 +682,9 @@ body .container #contact_section #col_map .img_map img {
     margin-top: 110px;
   }
 }
-@media only screen and (min-width: 1200px) and (min-height: 900px) {
+@media only screen and (min-width: 1400px) and (min-height: 900px) {
   body .container #sections {
-    margin-top: 300px;
-  }
-}
-@media only screen and (min-width: 1600px) and (min-height: 900px) {
-  body .container #sections {
-    margin-top: 360px;
+    margin-top: 150px;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -686,6 +710,7 @@ body .container #contact_section #col_map .img_map img {
   body nav .navbar-brand {
     display: contents;
     color: #fff;
+    transition: all 0.1s ease-in-out;
   }
   body nav .navbar-brand a {
     margin-left: 100px;
@@ -719,9 +744,9 @@ body .container #contact_section #col_map .img_map img {
     top: 22px;
     width: 150px;
   }
-  body nav .nav_things .globe_svg {
+  body nav .nav_things #globe_svg {
     color: #fff;
-    font-size: 2.2rem;
+    font-size: 1.1em;
   }
   body nav .nav_things #dropdown_lang {
     top: 0%;

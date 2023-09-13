@@ -34,6 +34,13 @@ const servEsp = {
     inventories:`Inventarios`,
     supply:`Gestión de Aprovisionammientos`,
     national:`Comercialización Nacional e Internacional`,
+    marketAn: `Análisis de Mercado y Actualizaciones`,
+    potOpp: `Identificación de potenciales oportunidades`,
+    promotion:`Promoción, Marketing y Ventas`,
+    salesDistrib:`Asistencia en Ventas y Distribución`,
+    innovate:`Productos innovadores`,
+    efficient:`Soluciones eficientes`,
+    techSup:`Soporte Técnico de alto nivel`,
     faq:`Preguntas Frecuentes`,
     faqSmall:``,
     pregunta1:`¿Cómo puedo contactarme con ustedes?`,
@@ -144,6 +151,13 @@ let customs2 = document.getElementById("customs2");
 let inventories = document.getElementById("inventories");
 let supply = document.getElementById("supply");
 let national = document.getElementById("national");
+let market = document.getElementById("market");
+let opportunities = document.getElementById("ident_op");
+let  promotion = document.getElementById("promotion");
+let salesDistrib = document.getElementById("sales_dist");
+let innovate = document.getElementById("innovate");
+let efficient = document.getElementById("efficient");
+let techSup = document.getElementById("tech_sup");
 let faq = document.getElementById("faq");
 let faqSmall = document.getElementById("faq_small");
 let pregunta1 = document.getElementById("pregunta1");
@@ -154,8 +168,6 @@ let pregunta3 = document.getElementById("pregunta3");
 let respuesta3 = document.getElementById("respuesta3");
 let pregunta4 = document.getElementById("pregunta4");
 let respuesta4 = document.getElementById("respuesta4");
-
-
 
 //Contact variables
 let contH1 = document.getElementById("cont_h1");
@@ -185,17 +197,17 @@ changeLang(); //call the function so it loads the lang selected previously
 espBtn.addEventListener("click", setEsp);
 engBtn.addEventListener("click",setEng);
 
-// const Toast = Swal.mixin({
-//     toast: true,
-//     position: 'bottom-end',
-//     showConfirmButton: false,
-//     timer: 3000,
-//     timerProgressBar: true,
-//     didOpen: (toast) => {
-//       toast.addEventListener('mouseenter', Swal.stopTimer)
-//       toast.addEventListener('mouseleave', Swal.resumeTimer)
-//     }
-//   });
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'bottom-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+});
 
 function setEsp(){
     let swal = document.getElementsByClassName("swal2-container");
@@ -212,6 +224,8 @@ function setEsp(){
         icon: 'success',
         title: 'Español seleccionado'
       });
+
+      validateInputs();
 }
 function setEng(){
     let swal = document.getElementsByClassName("swal2-container");
@@ -311,6 +325,13 @@ function changeLang(){
             inventories.innerHTML = servEsp["inventories"];
             supply.innerHTML = servEsp["supply"];
             national.innerHTML = servEsp["national"];
+            market.innerHTML = servEsp["marketAn"];
+            opportunities.innerHTML = servEsp["potOpp"];
+            promotion.innerHTML = servEsp["promotion"];
+            salesDistrib.innerHTML = servEsp["salesDistrib"];
+            innovate.innerHTML = servEsp["innovate"];
+            efficient.innerHTML = servEsp["efficient"];
+            techSup.innerHTML = servEsp["techSup"];
             faq.innerHTML = servEsp["faq"];
             faqSmall.innerHTML = servEsp["faqSmall"];
             pregunta1.innerHTML =servEsp["pregunta1"];
@@ -445,14 +466,25 @@ function isValidEmail(email){
 };
 
 function validateEmail(){
+    let lang = localStorage.getItem("lang");
     let emailValue = document.getElementById("email").value.trim();
 
     if(emailValue === ""){
-        setError(email, "Email is required");
+        if(lang=="esp"){
+            setError(email,"Se requiere su Correo Electrónico");
+        }else{
+            setError(email, "Email is required");
+        };
         emailValidation = false;
+
     }else if(!isValidEmail(emailValue)){
+        if(lang=="esp"){
+            setError(email,"Escriba una dirección de correo electrónico");
+        }else{
         setError(email, "Provide an email address");
+        }
         emailValidation = false;
+
     }else{
         setValid(email);
         emailValidation = true;
@@ -461,8 +493,14 @@ function validateEmail(){
 
 function validateName(){
     let nameFormValue = document.getElementById("name").value.trim();
+    let lang = localStorage.getItem("lang");
+
     if(nameFormValue === ""){
-        setError(nameForm, "You have to fill in your name");
+        if(lang=="esp"){
+            setError(nameForm,"Por favor escriba su nombre");
+        }else{
+            setError(nameForm, "Please fill in your name");
+        }
         nameValidation = false;
     }else{
         setValid(nameForm);
@@ -471,14 +509,29 @@ function validateName(){
 };
 
 function validateMsg(){
+    let lang = localStorage.getItem("lang");
     let msgValue = document.getElementById("message").value.trim();
 
     if(msgValue==""){
-        setError(msg,"Write a message addressing your inquiries");
+        if(lang=="esp"){
+            setError(msg,"Escriba un mensaje con sus consultas");
+        }else{
+            setError(msg,"Write a message addressing your inquiries");
+        };
         msgValidation = false;
     }else if(msgValue.length<15){
-        setError(msg, "Your message is too short");
+        if(lang=="esp"){
+            setError(msg,"Su mensaje es demasiado corto")
+        }else{
+            setError(msg, "Your message is too short");
+        }
         msgValidation = false;
+    }else if(msgValue.length>=419){
+        if(lang=="esp"){
+            setError(msg,"Máximo de caracteres alcanzado");
+        }else{
+            setError(msg,"Maximum character count reached");
+        }
     }else{
         setValid(msg);
         msgValidation = true;
