@@ -383,31 +383,60 @@ function fireSwal(){
 
 //form
 let form = document.getElementById("form")
-let email = document.getElementById("email").value.trim();
-let nameForm = document.getElementById("name").value;
-let msg = document.getElementById("message").value;
+let email = document.getElementById("email");
+let nameForm = document.getElementById("name");
+let msg = document.getElementById("message");
+let emailValidation = false;
+let nameValidation = false;
+let msgValidation = false;
+let validation = false;
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    if(nameForm.value!=""||email.value!=""||msg.value!=""){
+        validateInputs();
+    }
+});
+
+email.addEventListener("input", ()=>{
+    validateEmail();
+})
+
+nameForm.addEventListener("input", ()=>{
+    validateName();
+})
+
+msg.addEventListener("input", ()=>{
+    validateMsg();
+})
+
 
 form.addEventListener("submit", e =>{
-    e.preventDefault();
     validateInputs();
+    if(validation!==true){
+        e.preventDefault();
+    }
 });
 
 function setValid(element){
     const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector(".invalid");
+    const errorDisplay = inputControl.querySelector(".error");
 
     errorDisplay.innerText = "";
     inputControl.classList.add("valid");
     inputControl.classList.remove("invalid");
+    inputControl.classList.remove("focus");
+
 };
 
 function setError(element, message){
     const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector(".invalid");
+    const errorDisplay = inputControl.querySelector(".error");
 
     errorDisplay.innerText = message;
     inputControl.classList.add("invalid");
     inputControl.classList.remove("valid");
+    inputControl.classList.remove("focus");
+
 }
 
 function isValidEmail(email){
@@ -415,52 +444,53 @@ function isValidEmail(email){
     return re.test(String(email).toLowerCase());
 };
 
-function validateInputs(){
-    let lang = localStorage.getItem("lang");
-    if(nameForm === ""){
-        setError(nameForm, "You have to fill in your name");
-    }else{
-        setValid(nameForm);
-    }
+function validateEmail(){
+    let emailValue = document.getElementById("email").value.trim();
 
-    if(email === ""){
+    if(emailValue === ""){
         setError(email, "Email is required");
-    }else if(!isValidEmail(email)){
+        emailValidation = false;
+    }else if(!isValidEmail(emailValue)){
         setError(email, "Provide an email address");
+        emailValidation = false;
     }else{
         setValid(email);
+        emailValidation = true;
     }
+};
 
-    if(msg===""){
+function validateName(){
+    let nameFormValue = document.getElementById("name").value.trim();
+    if(nameFormValue === ""){
+        setError(nameForm, "You have to fill in your name");
+        nameValidation = false;
+    }else{
+        setValid(nameForm);
+        nameValidation = true;
+    }
+};
+
+function validateMsg(){
+    let msgValue = document.getElementById("message").value.trim();
+
+    if(msgValue==""){
         setError(msg,"Write a message addressing your inquiries");
-    }else if(msg.length<15){
+        msgValidation = false;
+    }else if(msgValue.length<15){
         setError(msg, "Your message is too short");
+        msgValidation = false;
     }else{
         setValid(msg);
+        msgValidation = true;
+    }
+};
+
+function validateInputs(){
+    if(emailValidation&&nameValidation&&msgValidation){
+        validation=true;
+    }else{
+        validateEmail();
+        validateName();
+        validateMsg();
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-// email.addEventListener("input", ()=>{
-//     let emailPattern = /@/;
-//     if(!emailPattern.test(email)){
-        
-//     }
-// })
-
-// nameForm.addEventListener("input", ()=>{
-//     if(nameForm=="s"){
-//         // let nameFormDiv = document.getElementById("name_form");
-//         // nameFormDiv.classList.add("invalid");
-//         alert("culo");
-//     }
-// })

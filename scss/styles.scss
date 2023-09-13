@@ -597,6 +597,112 @@ body{
                 margin: 0;
             }
 
+            .invalid{
+                input:focus~span,
+                textarea:focus~span,
+                input:valid ~ span,
+                textarea:valid ~ span{
+                    background-color: red;
+                    color: $color-success;
+                    transform: translateX(10px) translateY(-7px);
+                    font-size: 0.65em;
+                    padding: 0 10px;
+                    letter-spacing: 0.2em;
+                    transition: 0.3s all ease-in-out;
+                    color: black;
+                    border-radius: 2px;
+                }
+
+                input{
+                    border: 1px solid red;
+                }
+
+                textarea:focus,
+                textarea:valid,
+                textarea{
+                    border: 1px solid red;
+                }
+
+                textarea:focus~span,
+                textarea:valid ~ span{
+                    background-color: red;
+                }
+
+                .error {
+                    position: absolute;
+                    left: +5px;
+                    color: #ff3860;
+                    font-size: 12px;
+                    height: 13px;
+                }
+            }
+
+            .valid{
+                input{
+                    border: 1px solid black;
+                }
+                
+                input:focus~span,
+                textarea:focus~span,
+                input:valid ~ span,
+                textarea:valid ~ span{
+                    background-color: $color-success;
+                    color: $color-success;
+                    transform: translateX(10px) translateY(-7px);
+                    font-size: 0.65em;
+                    padding: 0 10px;
+                    letter-spacing: 0.2em;
+                    transition: 0.3s all ease-in-out;
+                    color: black;
+                    border-radius: 2px;
+                }
+
+                input:focus,
+                input:valid{
+                    border: 1px solid $color-success;
+                }
+
+                textarea:focus,
+                textarea:valid{
+                    border: 1px solid $color-success;
+                }
+
+                textarea:focus~span,
+                textarea:valid ~ span{
+                    background-color: $color-success;
+                }
+            }
+
+            .focus{
+                input{
+                    border: 1px solid black;
+                }
+
+                input:focus ~ span,
+                textarea:focus ~ span,
+                input:valid ~ span,
+                textarea:valid ~ span{
+                    color: $color-warning;
+                    transform: translateX(10px) translateY(-7px);
+                    font-size: 0.65em;
+                    padding: 0 10px;
+                    letter-spacing: 0.2em;
+                    background-color: $color-warning;
+                    color: black;
+                    border-radius: 2px;
+                }
+
+                input:valid,
+                input:focus{
+                    border: 1px solid $color-warning;
+                }
+
+                textarea:focus,
+                textarea:valid{
+                    border: 1px solid $color-warning;
+                }
+            }
+
             .inputBox{
                 position: relative;
                 width: 250px;
@@ -604,7 +710,6 @@ body{
                 input{
                     width: 100%;
                     padding: 10px;
-                    border: 1px solid black;
                     background-color: $color-background;
                     border-radius: 5px;
                     outline: none;
@@ -612,72 +717,6 @@ body{
                     font-size: 1em;
                     transition: 0.3s;
                 }
-                
-                input:focus ~ span,
-                textarea:focus ~ span{
-                    color: $color-warning;
-                    transform: translateX(10px) translateY(-7px);
-                    font-size: 0.65em;
-                    padding: 0 10px;
-                    // background-color: $color-background;
-                    // border-left: 1px solid $color-warning;
-                    // border-right: 1px solid $color-warning;
-                    letter-spacing: 0.2em;
-                    transition: 0.3s all ease-in-out;
-                    background-color: $color-warning;
-                    color: black;
-                    border-radius: 2px;
-                }
-
-                input:focus{
-                    border: 1px solid $color-warning;
-                }
-
-                .valid{
-                    span{
-                        background-color: $color-success;
-                        color: $color-success;
-                        transform: translateX(10px) translateY(-7px);
-                        font-size: 0.65em;
-                        padding: 0 10px;
-                        letter-spacing: 0.2em;
-                        transition: 0.3s all ease-in-out;
-                        color: black;
-                        border-radius: 2px;
-                    }
-
-                    input, textarea{
-                        border: 1px solid $color-success;
-                    }
-                }
-
-                // input:valid ~ span,
-                // textarea:valid ~ span{
-                //     background-color: $color-success;
-                //     color: $color-success;
-                //     transform: translateX(10px) translateY(-7px);
-                //     font-size: 0.65em;
-                //     padding: 0 10px;
-                //     letter-spacing: 0.2em;
-                //     transition: 0.3s all ease-in-out;
-                //     color: black;
-                //     border-radius: 2px;
-                // }
-
-                // input:valid{
-                //     border: 1px solid $color-success;
-                // }
- 
-                // input:invalid{
-                //     border: 1px solid red;
-                // }
-
-                // input:invalid ~ span{
-                //     color: black;
-                //     border-left: 1px solid red;
-                //     border-right: 1px solid red;
-                //     background-color: red;
-                // }
 
                 span{
                     position: absolute;
@@ -687,46 +726,29 @@ body{
                     font-size: 1em;
                     color: $color-info-dark;
                     text-transform: uppercase;
+                    transition: 0.3s all ease-in-out;
                 }
             }
 
-            #message_input{
-                textarea{
-                    resize: none;
-                    box-shadow: none;
-                    background-color: $color-background;
-                    border: solid 1px black;
-                    border-radius: 5px;
-                    outline: none;
-                    position: relative;
-                    width: 250px;
-                    margin-top: 20px;
-                    padding: 15px;
-                    overflow: hidden;
-                }
+            
+            textarea{
+                resize: none;
+                box-shadow: none;
+                background-color: $color-background;
+                border: solid 1px black;
+                border-radius: 5px;
+                outline: none;
+                position: relative;
+                width: 250px;
+                margin-top: 20px;
+                padding: 15px;
+                overflow: hidden;
+            }
 
-                textarea:focus{
-                    border: 1px solid $color-warning;
-                }
-
-                // textarea:valid{
-                //     border: 1px solid $color-success;
-                // }
-
-                textarea:focus ~ span{
-                    background-color: $color-warning;
-                    color: black;
-                    border-radius: 2px;
-                }
-
-                // textarea:valid ~ span{
-                //     background-color: $color-success;
-                // }
-
-                span{
+            #cont_msg{
                     top: 40px;
                 }
-            }
+            //End of form styles
 
             .anchor_contact{
                 display: flex;

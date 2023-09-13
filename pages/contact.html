@@ -123,32 +123,35 @@
                     </div>
     
                     <!--FORM-->
-                    <form action="https://formsubmit.co/9f57a05f0da447a3059524daf558a387" method="POST" id="form">
+                    <form action="https://formsubmit.co/9f57a05f0da447a3059524daf558a387" method="POST" id="form" novalidate>
     
                         <div class="row d-flex justify-content-center">
                             <div class="col-lg-3 col_forms">
-                                <div class="inputBox">
+                                <div class="inputBox focus">
                                     <label for="email" class="hide">Email</label>
                                     <input id="email" type="text" name="Email" required>
                                     <span id="cont_email">Email</span>
+                                    <div class="error"></div>
                                 </div>
                             </div>
         
                             <div class="col-lg-3 col_forms">
-                                <div class="inputBox" id="name_form">
+                                <div class="inputBox focus" id="name_form">
                                     <label for="name" class="hide">Name</label>
                                     <input type="text" id="name" name="Name" required>
                                     <span id="cont_nombre">Name</span>
+                                    <div class="error"></div>
                                 </div>
                             </div>
                         </div>
         
                         <div class="row">
                             <div class="col col_forms">
-                                <div class="inputBox" id="message_input">
+                                <div class="inputBox focus" id="message_input">
                                     <label for="message" class="hide" >Message</label>
                                     <textarea name="Message" id="message" cols="46" rows="6" required maxlength="420"></textarea>
                                     <span id="cont_msg">Message</span>
+                                    <div class="error"></div>
                                 </div>
                             </div>
                         </div>
