@@ -252,7 +252,7 @@ body .container #index_landing_h1 {
   font-weight: 700;
 }
 body .container #row_h1_img {
-  margin: 150px 0 60px 0;
+  margin: 100px 0 60px 0;
 }
 body .container #row_h1_img h1 {
   font-size: 2.1rem;
@@ -677,14 +677,41 @@ body .container #contact_section #col_map .img_map img {
     width: 100%;
   }
 }
-@media only screen and (min-width: 1200px) and (max-height: 800px) {
+@media only screen and (min-width: 1200px) and (max-width: 1400px) and (max-height: 649px) {
+  body .container #row_h1_img {
+    text-align: left;
+    margin: 0 0 20px 0;
+  }
   body .container #sections {
-    margin-top: 110px;
+    margin-top: 0;
+    padding-top: 30px;
   }
 }
-@media only screen and (min-width: 1400px) and (min-height: 900px) {
+@media only screen and (min-width: 1200px) and (min-height: 400px) {
+  body .container #row_h1_img {
+    margin: 170px 0 20px 0;
+    text-align: left;
+  }
   body .container #sections {
-    margin-top: 150px;
+    margin-top: 100px;
+  }
+}
+@media only screen and (max-width: 1000px) and (min-height: 300px) {
+  body .container #sections {
+    margin-top: 100px;
+  }
+}
+@media only screen and (min-width: 1200px) and (min-height: 600px) {
+  body .container #row_h1_img {
+    margin: 170px 0 20px 0;
+    text-align: left;
+  }
+  body .container #row_h1_img h1 {
+    margin-top: 90px;
+    font-size: 3rem;
+  }
+  body .container #sections {
+    margin-top: 0;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -754,14 +781,6 @@ body .container #contact_section #col_map .img_map img {
     top: 60px;
     right: 30px;
   }
-  body .container #row_h1_img {
-    margin: 170px 0 20px 0;
-    text-align: left;
-  }
-  body .container #row_h1_img h1 {
-    margin-top: 90px;
-    font-size: 3rem;
-  }
   body .container #info_portada {
     text-align: left;
   }
@@ -783,6 +802,9 @@ body .container #contact_section #col_map .img_map img {
     height: 100vh;
     width: 100vw;
   }
+  body .container .info_sections p {
+    margin: 40px 20px 0 0;
+  }
   body .container .info_sections .item {
     order: 1;
   }
@@ -798,11 +820,11 @@ body .container #contact_section #col_map .img_map img {
   }
   body .container .info_sections #btn1 {
     position: relative;
-    top: -200px;
+    top: -250px;
   }
   body .container .info_sections #btn2 {
     position: relative;
-    top: -220px;
+    top: -250px;
   }
   body .container .info_sections .imgs_info_section img {
     width: 750px;
@@ -862,6 +884,9 @@ body .container #contact_section #col_map .img_map img {
   body nav .offcanvas-body ul {
     position: relative;
     right: -320px;
+  }
+  body .container #sections {
+    margin-top: 170px;
   }
   body .row_serv .bkgr_imgs img {
     position: relative;
