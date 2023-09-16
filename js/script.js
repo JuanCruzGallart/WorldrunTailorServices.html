@@ -16,7 +16,7 @@ const servEsp = {
     servSmall2:`Estos son los principales servicios que brindamos, ante cualquier consulta contáctese con nosotros.`,
     storage:`Almacenamiento`,
     design:`Diseño, Gestión e Inventario de Almacenes`,
-    recep:`Recepciones y Expediciones`,
+    recep:`Recepciones y Expediciones de mercadería`,
     stock:`Gestión de Stock`,
     order:`Preparación de pedidos (Picking/Packing)`,
     logistics:`Diagnóstico Integral de Logística`,
@@ -29,7 +29,7 @@ const servEsp = {
     intermediate:`Bienes Intermedios`,
     manufactured:`Productos Manufacturados`,
     portOps:`Operaciones Portuarias`,
-    customs:`Recinto Aduanero (Seleccion y Operacion)`,
+    customs:`Recinto Aduanero (Seleccion y Operación)`,
     customs2:`Gestón de Aduanas y Comercio Exterior`,
     inventories:`Inventarios`,
     supply:`Gestión de Aprovisionammientos`,
@@ -43,13 +43,13 @@ const servEsp = {
     techSup:`Soporte Técnico de alto nivel`,
     faq:`Preguntas Frecuentes`,
     faqSmall:``,
-    pregunta1:`¿Cómo puedo contactarme con ustedes?`,
+    pregunta1:`¿Cómo puedo contactarme con ustedes? <span class="material-symbols-sharp">arrow_drop_down_circle</span>`,
     respuesta1:`Llamanos al +1 (786) 628-7922 o mandanos un correo a worldrunservices@gmail.com`,
-    pregunta2:`¿Trabajan en Asia?`,
+    pregunta2:`¿Trabajan en Asia?<span class="material-symbols-sharp">arrow_drop_down_circle</span>`,
     respuesta2:`Sí, trabajamos en Asia, sobretodo en la parte oriental (Japón, Corea del Sur).`,
-    pregunta3:`¿Su experiencia en logística le ahorraría dinero a mi negocio?`,
+    pregunta3:`¿Su experiencia en logística le ahorraría dinero a mi negocio?<span class="material-symbols-sharp">arrow_drop_down_circle</span>`,
     respuesta3:`Sí, le aseguramos que nuestra experiencia en el campo no sólo le ahorraría dinero sino también incontables horas de trabajo e investigación.`,
-    pregunta4:`¿Cuánto tiempo llevan trabajando en este campo?`,
+    pregunta4:`¿Cuánto tiempo llevan trabajando en este campo?<span class="material-symbols-sharp">arrow_drop_down_circle</span>`,
     respuesta4:`Hace más de 25 años que trabajamos en el rubro.`
 }
 
@@ -235,10 +235,7 @@ function setEng(){
         localStorage.setItem("lang", null);
         console.log("Language: eng");
         changeLang();
-    }
-    if(swal !== null){
-        Swal.close();
-    }
+    };
 }
 
 if(fired!=="true"){
@@ -398,7 +395,7 @@ function fireSwal(){
     let espBtnSwal = document.getElementById("esp_btn_swal");
     let engBtnSwal = document.getElementById("eng_btn_swal");
     espBtnSwal.addEventListener("click",setEsp);
-    engBtnSwal.addEventListener("click", setEng);
+    engBtnSwal.addEventListener("click", ()=>{Swal.close();});
     localStorage.setItem("fired",true);
 }
 

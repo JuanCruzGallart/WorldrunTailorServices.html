@@ -714,6 +714,11 @@ body .container #contact_section #col_map .img_map img {
     margin-top: 0;
   }
 }
+@media only screen and (min-width: 1200px) and (min-height: 850px) {
+  body .container #sections {
+    margin-top: 100px;
+  }
+}
 @media only screen and (min-width: 1200px) {
   body .nav_bkgr_black_transp {
     background-color: black;
@@ -886,7 +891,7 @@ body .container #contact_section #col_map .img_map img {
     right: -320px;
   }
   body .container #sections {
-    margin-top: 170px;
+    margin-top: 0;
   }
   body .row_serv .bkgr_imgs img {
     position: relative;
@@ -897,6 +902,9 @@ body .container #contact_section #col_map .img_map img {
   body nav .offcanvas-body ul {
     position: relative;
     right: -440px;
+  }
+  body .container #sections {
+    margin-top: 170px;
   }
 }
 @media only screen and (min-width: 1700px) {

@@ -977,6 +977,14 @@ body{
         }
     }
 
+    @media only screen and (min-width:1200px) and (min-height:850px){
+        .container{
+            #sections{
+                margin-top: 100px;
+            }
+        }
+    }
+
     @media only screen and (min-width: 1200px){
         .nav_bkgr_black_transp{
             background-color: black;
@@ -1241,7 +1249,7 @@ body{
 
         .container{
             #sections{
-                margin-top: 170px;
+                margin-top: 0;
             }
         }
         .row_serv{
@@ -1261,6 +1269,11 @@ body{
                     position: relative;
                     right: -440px;
                 }
+            }
+        }
+        .container{
+            #sections{
+                margin-top: 170px;
             }
         }
     }
