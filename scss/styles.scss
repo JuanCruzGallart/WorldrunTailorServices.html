@@ -57,7 +57,7 @@ body{
 
     //swal
     #swalContainer{
-        height: 460px;
+        height: 430px;
         
         span{
             font-size: 3.4em;
@@ -80,7 +80,7 @@ body{
 
         #small_swal{
             position: absolute;
-            bottom: +20px;
+            bottom: +15px;
             left: 0;
             margin: 0 30px;
             p{
@@ -94,7 +94,7 @@ body{
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
-            margin: 40px 0 0 0 ;
+            margin: 50px 0 0 0 ;
     
             .swal_lang_btn{
                 display: flex;
@@ -297,6 +297,7 @@ body{
 
                     a:active{
                         background-color: transparent;
+                        color: $color-warning;
                     }
                 }
 
@@ -785,6 +786,7 @@ body{
                 max-width: fit-content;
                 text-decoration: none;
                 color: black;
+                font-size: 1.1em;
             }
 
             .anchor_contact:hover{
@@ -799,6 +801,12 @@ body{
                     max-width: 85vw;
                     img{
                         width: 100%;
+                        transition: all 0.3s ease-in-out;
+                        border-radius: 5px;
+                    }
+                    img:hover{
+                        transform: scale(1.05);
+                        border-radius: 15px;
                     }
                 }
             }
@@ -1051,6 +1059,11 @@ body{
                 top: +22px;
                 width: 150px;
 
+                span:hover{
+                    color:$color-warning;
+                    transition: all 0.1s ease-in-out;
+                }
+
                 #globe_svg{
                     color: $color-white;
                     font-size: 1.1em;
@@ -1169,6 +1182,23 @@ body{
                     margin: 55px 150px 85px 150px;
                 }
             }
+
+            #faq_section{
+                .collapse{
+                    p{
+                        margin-bottom: 0;
+                        font-size: 1.1em;
+                    }
+                    a:hover{
+                        strong{
+                            color: $color-success;
+                            transition: all 0.1s ease-in-out;
+                        }
+                    }
+                }
+                
+            }
+            
             .faq_box{
                 font-size: larger;
             }

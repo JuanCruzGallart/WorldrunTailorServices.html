@@ -1,8 +1,8 @@
-//Make a .json file with all this
 const indexEsp = {
     h1: `Soluciones hechas a medida para su Negocio`,
     p: `Consultoría sobre Negocios Internacionales para la economía global`,
     small: `Nos encargamos de sus logísticas para que se pueda concentrar en lo importante.`,
+    contactBtn:`Contáctenos`,
     h2_n1: `Optimice las logísticas de su Negocio`,
     p_n1: `Identificamos las debilidades de su Negocio y las mejoramos por usted`,
     h2_n2:`Somos expertos en lo que hacemos`,
@@ -44,13 +44,15 @@ const servEsp = {
     faq:`Preguntas Frecuentes`,
     faqSmall:``,
     pregunta1:`¿Cómo puedo contactarme con ustedes? <span class="material-symbols-sharp">arrow_drop_down_circle</span>`,
-    respuesta1:`Llamanos al +1 (786) 628-7922 o mandanos un correo a worldrunservices@gmail.com`,
+    respuesta1:`<p>Envíanos un correo a <a href="mailto:worldrunservices@gmail.com" target="_blank"><strong>worldrunservices@gmail.com</strong></a> o llámanos al <a href="tel:+1 (786) 628-7922" target="_blank"><strong>+1 (786) 628-7922</strong></a>.</p>`,
     pregunta2:`¿Trabajan en Asia?<span class="material-symbols-sharp">arrow_drop_down_circle</span>`,
-    respuesta2:`Sí, trabajamos en Asia, sobretodo en la parte oriental (Japón, Corea del Sur).`,
+    respuesta2:`<p>Nuestra compañía avanza constantemente, desarrollando una <b>red de proveedores en Asia Oriental</b> y tenemos planes de expandirnos en todo el continente en un futuro próximo.</p>`,
     pregunta3:`¿Su experiencia en logística le ahorraría dinero a mi negocio?<span class="material-symbols-sharp">arrow_drop_down_circle</span>`,
-    respuesta3:`Sí, le aseguramos que nuestra experiencia en el campo no sólo le ahorraría dinero sino también incontables horas de trabajo e investigación.`,
+    respuesta3:`<p>Nuestro objetivo es no solo ahorrarle <b>dinero</b>, sino también <b>tiempo</b> y <b>esfuerzo</b> al ayudarle a encontrar la mejor estrategia para construir un futuro exitoso.</p>`,
     pregunta4:`¿Cuánto tiempo llevan trabajando en este campo?<span class="material-symbols-sharp">arrow_drop_down_circle</span>`,
-    respuesta4:`Hace más de 25 años que trabajamos en el rubro.`
+    respuesta4:`<p>Durante las últimas dos décadas y media, hemos perfeccionado la logística, el transporte y el envío para empresas. Comenzamos en América Latina y, gracias a nuestra contínua expansión, ahora <strong>somos líderes en el mercado global</strong>.</p>`,
+    pregunta5:`¿Qué distingue a Worldrun Tailor Services del resto de la industria?`,
+    respuesta5:`<p>Nuestro equipo <b>altamente capacitado y profesional</b> se dedica a brindar servicios personalizados que se adaptan a sus necesidades exclusivas. No solo consideramos la magnitud de la tarea, sino que también diseñamos estrategias inteligentes para garantizar una mayor eficiencia y una efectividad inigualable en la <b>satisfacción de sus requisitos.</b></p>`
 }
 
 const contactEsp = {
@@ -110,7 +112,7 @@ let aAbout = document.getElementsByClassName("a_about");
 //Button variables
 let getStartedBtn = document.getElementsByClassName("get-started-btn");
 let learnMoreBtn = document.getElementsByClassName("learn-more-btn");
-console.log(learnMoreBtn);
+let contactBtn = document.getElementById("index_contact_btn");
 
 //Footer variables
 let pFooter = document.getElementById("footer_p");
@@ -168,6 +170,8 @@ let pregunta3 = document.getElementById("pregunta3");
 let respuesta3 = document.getElementById("respuesta3");
 let pregunta4 = document.getElementById("pregunta4");
 let respuesta4 = document.getElementById("respuesta4");
+let pregunta5 = document.getElementById("pregunta5");
+let respuesta5 = document.getElementById("respuesta5");
 
 //Contact variables
 let contH1 = document.getElementById("cont_h1");
@@ -292,6 +296,7 @@ function changeLang(){
             h1Land.innerHTML = indexEsp["h1"];
             pLand.innerHTML = indexEsp["p"];
             smallLand.innerHTML = indexEsp["small"];
+            contactBtn.innerHTML = indexEsp["contactBtn"];
             h2_n1.innerHTML = indexEsp["h2_n1"];
             p_n1.innerHTML = indexEsp["p_n1"];
             h2_n2.innerHTML = indexEsp["h2_n2"];
@@ -339,6 +344,8 @@ function changeLang(){
             respuesta3.innerHTML = servEsp["respuesta3"];
             pregunta4.innerHTML = servEsp["pregunta4"];
             respuesta4.innerHTML = servEsp["respuesta4"];
+            pregunta5.innerHTML = servEsp["pregunta5"];
+            respuesta5.innerHTML = servEsp["respuesta5"];
         }else if(contH1!=null){
             contH1.innerHTML = contactEsp["contH1"];
             contSmall.innerHTML = contactEsp["contSmall"];
