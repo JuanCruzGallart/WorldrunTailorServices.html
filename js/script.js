@@ -63,6 +63,7 @@ const contactEsp = {
     contEmail:`Correo`,
     contNombre:`Nombre`,
     contMsg:`Mensaje`,
+    submitBtn:`Enviar`,
     contH22:`Oficinas`,
     contH3: `Miami, Estados Unidos`,
 }
@@ -113,6 +114,7 @@ let aAbout = document.getElementsByClassName("a_about");
 let getStartedBtn = document.getElementsByClassName("get-started-btn");
 let learnMoreBtn = document.getElementsByClassName("learn-more-btn");
 let contactBtn = document.getElementById("index_contact_btn");
+let submitBtn = document.getElementById("submit_btn");
 
 //Footer variables
 let pFooter = document.getElementById("footer_p");
@@ -354,6 +356,7 @@ function changeLang(){
             contSmall2.innerHTML = contactEsp["contSmall2"];
             contNombre.innerHTML = contactEsp["contNombre"];
             contMsg.innerHTML = contactEsp["contMsg"];
+            submitBtn.innerHTML = contactEsp["submitBtn"];
             contH22.innerHTML = contactEsp["contH22"];
             contH3.innerHTML = contactEsp["contH3"];
         }else if(aboutH1!=null){
