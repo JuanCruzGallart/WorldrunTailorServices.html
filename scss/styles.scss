@@ -793,6 +793,14 @@ body{
                 color: $color-success;
             }
 
+            #aclaration{
+                margin: 20px 0 50px 0;
+                position: relative;
+                left: -10px;
+                font-size: 0.8em;
+                text-align: justify;
+            }
+
             #col_map{
                 display: flex;
                 justify-content: center;
@@ -1080,11 +1088,7 @@ body{
         }//end of nav styles
 
         .container{
-            // text-align: left;
-
             #info_portada{
-                // position: relative;
-                // top: -320px;
                 text-align: left;
 
                 p{
@@ -1096,8 +1100,6 @@ body{
             }
 
             #portada_btns{
-                // position: relative;
-                // top: -330px;
                 text-align: left;
             }
 
@@ -1218,6 +1220,12 @@ body{
                         width: 535px;
                     }
                 }//End of forms styles
+                #aclaration{
+                    margin-top: 40px;
+                    font-size: 0.9em;
+                    text-align: justify;
+                    position: static;
+                }
             }
         }//End of .container
     }//End of media 1200px

@@ -66,6 +66,7 @@ const contactEsp = {
     submitBtn:`Enviar`,
     contH22:`Oficinas`,
     contH3: `Miami, Estados Unidos`,
+    aclaration:`*Nuestra oficina no está abierta actualmente a clientes, pero estamos aquí para ayudarte. No dudes en ponerte en contacto con nosotros completando el formulario o llamándonos.`
 }
 
 const aboutEsp = {
@@ -185,6 +186,7 @@ let contNombre = document.getElementById("cont_nombre");
 let contMsg = document.getElementById("cont_msg");
 let contH22 = document.getElementById("cont_h22");
 let contH3 = document.getElementById("cont_h3");
+let aclaration = document.getElementById("aclaration");
 
 //About variables
 let aboutH1 = document.getElementById("about_h1");
@@ -359,6 +361,7 @@ function changeLang(){
             submitBtn.innerHTML = contactEsp["submitBtn"];
             contH22.innerHTML = contactEsp["contH22"];
             contH3.innerHTML = contactEsp["contH3"];
+            aclaration.innerHTML = contactEsp["aclaration"];
         }else if(aboutH1!=null){
             aboutH1.innerHTML = aboutEsp["h1"];
             aboutSmall.innerHTML = aboutEsp["small"];

@@ -602,6 +602,13 @@ body .container #contact_section .anchor_contact {
 body .container #contact_section .anchor_contact:hover {
   color: #1B9C85;
 }
+body .container #contact_section #aclaration {
+  margin: 20px 0 50px 0;
+  position: relative;
+  left: -10px;
+  font-size: 0.8em;
+  text-align: justify;
+}
 body .container #contact_section #col_map {
   display: flex;
   justify-content: center;
@@ -881,6 +888,12 @@ body .container #contact_section #col_map .img_map img:hover {
   }
   body .container #contact_section #message_input textarea {
     width: 535px;
+  }
+  body .container #contact_section #aclaration {
+    margin-top: 40px;
+    font-size: 0.9em;
+    text-align: justify;
+    position: static;
   }
 }
 @media only screen and (min-width: 1300px) {
